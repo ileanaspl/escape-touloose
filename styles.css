@@ -1,86 +1,67 @@
 :root {
-    --primary-color: #7D84B2;
-    --secondary-color: red;
-    --primary-font-size: 1rem;
-    --primary-font-family: "Inter", sans-serif;
-    --secondary-font-family: "Press Start 2P", system-ui;
+  --primary-color: #7d84b2;
+  --secondary-color: red;
+  --primary-font-size: 1rem;
+  --primary-font-family: "Inter", sans-serif;
+  --secondary-font-family: "Press Start 2P", system-ui;
 
-    --spacing: 1rem;
-    --spacing-double: calc(var(--spacing)*2)
+  --spacing: 1rem;
+  --spacing-double: calc(var(--spacing) * 2);
 }
 
 * {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
 
-
-
-
 .avatar {
-
-    border-radius: 50%;
-
-    max-width: 100%;
-    max-height: 100%;
+  border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .avatar-contener {
-
-    height: 5dvh;
-
-    border: solid black;
-
+  height: 5dvh;
+  border: solid black;
 }
 
 h1 {
-
-    font-family: var(--secondary-font-family);
-    border: solid black;
-
+  font-family: var(--secondary-font-family);
+  border: solid black;
 }
 
 header {
-    display: flex;
-    justify-content: space-around;
-    height: 10dvh;
-    background-color: var(--primary-color);
-
-
-    border: solid black;
+  display: flex;
+  justify-content: space-around;
+  height: 10dvh;
+  background-color: var(--primary-color);
+  border: solid black;
 }
 
-
 main {
-    height: 80dvh;
-    border: solid black;
-    padding-inline: var(--spacing);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: var(--primary-font-family);
-
-
-
-
+  height: 80dvh;
+  border: solid black;
+  padding-inline: var(--spacing);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--primary-font-family);
 }
 
 #question {
-    border: solid black;
+  border: solid black;
 }
 
 .réponse {
-    border: solid black;
+  border: solid black;
 }
 
 main footer {
-    background-image: url(city-toulouse.jpg);
+  background-image: url(city-toulouse.jpg);
 }
 
 footer {
-
-    height: 10dvh;
-
-    border: solid black
+  height: 10dvh;
+  border: solid black;
 }
