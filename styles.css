@@ -31,6 +31,10 @@ h1 {
   border: solid black;
 }
 
+h2 {
+  text-align: center;
+}
+
 header {
   display: flex;
   justify-content: space-around;

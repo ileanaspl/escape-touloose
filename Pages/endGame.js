@@ -1,16 +1,16 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
-import { endGame } from "./endGame.js";
+import { home } from "./home.js";
 
-export function prison() {
+export function endGame() {
   const title = createElementWithAttribute("h2", { id: "title" });
-  title.innerText = "Prison";
+  title.innerText = "The End";
   appendOrPrepend("append", "main", title);
 
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Bouton suivant";
   nextButton.addEventListener("click", () => {
     raz();
-    endGame();
+    home();
   });
   appendOrPrepend("append", "main", nextButton);
 }
