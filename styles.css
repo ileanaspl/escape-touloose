@@ -28,14 +28,13 @@
 
 h1 {
   font-family: var(--secondary-font-family);
-<<<<<<< HEAD
+
   border: solid black;
   font-size: var(--secondary-font-size);
   display: flex;
   align-items: center;
-=======
+
   border: solid rgb(198, 194, 194);
->>>>>>> fc7e3a030107e4aad5a916554116e5588007263a
 }
 
 h2 {
@@ -47,12 +46,9 @@ header {
   justify-content: space-around;
   height: 10dvh;
   background-color: var(--primary-color);
-<<<<<<< HEAD
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   border: solid black;
-=======
->>>>>>> fc7e3a030107e4aad5a916554116e5588007263a
 }
 
 main {
@@ -66,24 +62,9 @@ main {
   gap: var(--spacing);
 }
 
-<<<<<<< HEAD
-main,
-footer {
-  background-image: url(Assets/city-toulouse.jpg);
-  background-position: 1fr;
-}
-
-#question {
-  border: solid black;
-}
-
-.réponse {
-  border: solid black;
-=======
 .dynamique-content {
   width: 100dvw;
   border: solid rgb(198, 194, 194);
->>>>>>> fc7e3a030107e4aad5a916554116e5588007263a
 }
 
 main footer {
@@ -92,21 +73,12 @@ main footer {
 
 footer {
   height: 10dvh;
-<<<<<<< HEAD
+
   border: solid black;
 
   display: flex;
   justify-content: center;
-=======
 }
-@media screen and (min-width: 900px) {
-  .dynamique-content {
-    width: clamp(500px, 80dvw, 2000px);
-    border: solid rgb(198, 194, 194);
-  }
->>>>>>> fc7e3a030107e4aad5a916554116e5588007263a
-}
-
 .loader {
   display: inline-flex;
   border: 5px solid #5856d6;
@@ -114,9 +86,6 @@ footer {
   background-color: #5856d6;
   border-radius: 50%;
   background: linear-gradient(145deg, #5e5ce5, #4f4dc1);
-
-
-
 }
 
 .loader::before,
@@ -143,5 +112,11 @@ footer {
 @keyframes l4 {
   100% {
     text-shadow: 0 var(--t, -10em) 0 #000;
+  }
+}
+@media screen and (min-width: 900px) {
+  .dynamique-content {
+    width: clamp(500px, 80dvw, 2000px);
+    border: solid rgb(198, 194, 194);
   }
 }
