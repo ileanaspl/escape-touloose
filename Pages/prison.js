@@ -4,7 +4,7 @@ import { endGame } from "./endGame.js";
 export function prison() {
   const title = createElementWithAttribute("h2", { id: "title" });
   title.innerText = "Prison";
-  appendOrPrepend("append", "main", title);
+  appendOrPrepend("append", ".dynamique-content", title);
 
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Bouton suivant";
@@ -12,5 +12,5 @@ export function prison() {
     raz();
     endGame();
   });
-  appendOrPrepend("append", "main", nextButton);
+  appendOrPrepend("append", ".dynamique-content", nextButton);
 }

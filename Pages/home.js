@@ -4,7 +4,7 @@ import { quizz } from "./quizz.js";
 export function home() {
   const title = createElementWithAttribute("h2", { id: "title" });
   title.innerText = "Home page";
-  appendOrPrepend("append", "main", title);
+  appendOrPrepend("append", ".dynamique-content", title);
 
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Bouton suivant";
@@ -12,5 +12,5 @@ export function home() {
     raz();
     quizz();
   });
-  appendOrPrepend("append", "main", nextButton);
+  appendOrPrepend("append", ".dynamique-content", nextButton);
 }

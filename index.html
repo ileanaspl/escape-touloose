@@ -12,6 +12,7 @@
 
     <title>Escape too loose</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./Pages/hud.css" />
     <script src="main.js" type="module" defer></script>
   </head>
 
@@ -22,9 +23,21 @@
       </div>
       <h1>Escape touloose</h1>
     </header>
+
     <main>
-      <div id="bulle-info"></div>
-      <section class="questionaire">
+      <img id="info-bulle" class="visible" src="./Assets/infobulle.svg" alt="infobulle" />
+      <div id="info-container" class="invisible">
+        <div id="infos">
+          <h2 id="info-title">Infos !</h2>
+          <p id="info-paragraphe">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem ratione quas harum
+            incidunt quidem debitis sunt veniam laboriosam magni, porro a reiciendis nemo
+            temporibus. Aut eius facere fugit nesciunt?
+          </p>
+          <iframe id="info-iframe"></iframe>
+        </div>
+      </div>
+      <section class="dynamique-content">
         <p id="question">Pourquoi on dit que Toulouse est la ville rose ?</p>
 
         <form class="réponse">
