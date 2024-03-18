@@ -5,7 +5,6 @@
   --secondary-font-size: 1.3rem;
   --primary-font-family: "Inter", sans-serif;
   --secondary-font-family: "Press Start 2P", system-ui;
-
   --spacing: 1rem;
   --spacing-double: calc(var(--spacing) * 2);
 }
@@ -24,15 +23,19 @@
 
 .avatar-contener {
   height: 5dvh;
-  border: solid black;
+  border: solid rgb(198, 194, 194);
 }
 
 h1 {
   font-family: var(--secondary-font-family);
+<<<<<<< HEAD
   border: solid black;
   font-size: var(--secondary-font-size);
   display: flex;
   align-items: center;
+=======
+  border: solid rgb(198, 194, 194);
+>>>>>>> fc7e3a030107e4aad5a916554116e5588007263a
 }
 
 h2 {
@@ -44,21 +47,26 @@ header {
   justify-content: space-around;
   height: 10dvh;
   background-color: var(--primary-color);
+<<<<<<< HEAD
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   border: solid black;
+=======
+>>>>>>> fc7e3a030107e4aad5a916554116e5588007263a
 }
 
 main {
   height: 80dvh;
-  border: solid black;
+  border: solid rgb(198, 194, 194);
   padding-inline: var(--spacing);
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row-reverse;
   font-family: var(--primary-font-family);
+  gap: var(--spacing);
 }
 
+<<<<<<< HEAD
 main,
 footer {
   background-image: url(Assets/city-toulouse.jpg);
@@ -71,6 +79,11 @@ footer {
 
 .réponse {
   border: solid black;
+=======
+.dynamique-content {
+  width: 100dvw;
+  border: solid rgb(198, 194, 194);
+>>>>>>> fc7e3a030107e4aad5a916554116e5588007263a
 }
 
 main footer {
@@ -79,10 +92,19 @@ main footer {
 
 footer {
   height: 10dvh;
+<<<<<<< HEAD
   border: solid black;
 
   display: flex;
   justify-content: center;
+=======
+}
+@media screen and (min-width: 900px) {
+  .dynamique-content {
+    width: clamp(500px, 80dvw, 2000px);
+    border: solid rgb(198, 194, 194);
+  }
+>>>>>>> fc7e3a030107e4aad5a916554116e5588007263a
 }
 
 .loader {

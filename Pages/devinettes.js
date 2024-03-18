@@ -4,7 +4,7 @@ import { prison } from "./prison.js";
 export function devinette() {
   const title = createElementWithAttribute("h2", { id: "title" });
   title.innerText = "Devinette !";
-  appendOrPrepend("append", "main", title);
+  appendOrPrepend("append", ".dynamique-content", title);
 
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Bouton suivant";
@@ -12,5 +12,5 @@ export function devinette() {
     raz();
     prison();
   });
-  appendOrPrepend("append", "main", nextButton);
+  appendOrPrepend("append", ".dynamique-content", nextButton);
 }
