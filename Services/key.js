@@ -1,1 +1,1 @@
-export const apikey = 123456;
+export const apikey = "AIzaSyBRSTDqZttHJ-UMr-3tdyFvIlrP1NDcCv0";
