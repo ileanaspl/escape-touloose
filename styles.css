@@ -4,6 +4,7 @@
   --third-color: #5856d6;
   --primary-font-size: 1rem;
   --secondary-font-size: 1.1rem;
+  --secondary-font-size: 1.1rem;
   --primary-font-family: "Inter", sans-serif;
   --secondary-font-family: "Press Start 2P", system-ui;
   --spacing: 1rem;
@@ -53,6 +54,8 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
   height: 10dvh;
   background-color: var(--primary-color);
   border-bottom-right-radius: 25px;
@@ -85,7 +88,9 @@ footer {
 .loader {
   display: inline-flex;
   border: 5px solid var(--third-color);
+  border: 5px solid var(--third-color);
   border-radius: 50%;
+  background-color: var(--third-color);
   background-color: var(--third-color);
   border-radius: 50%;
   background: linear-gradient(145deg, #5e5ce5, #4f4dc1);
@@ -105,6 +110,7 @@ footer {
   color: #0000;
 
   overflow: hidden;
+  animation: crono 99s infinite linear;
   animation: crono 99s infinite linear;
 }
 
