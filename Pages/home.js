@@ -22,8 +22,8 @@ export function home() {
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Bouton suivant";
   nextButton.addEventListener("click", () => {
-    header.innerText += playerName.value;
-    playerInfos.playerName = playerName.value;
+    // header.innerText += playerName.value;
+    // playerInfos.playerName = playerName.value;
     raz();
     quizz();
   });
