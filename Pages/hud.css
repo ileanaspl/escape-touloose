@@ -1,7 +1,7 @@
-.invisible {
+.info-invisible {
   visibility: hidden;
 }
-.visible {
+.info-visible {
   visibility: visible;
 }
 
@@ -46,8 +46,8 @@
 }
 
 @media screen and (min-width: 900px) {
-  .invisible,
-  .visible {
+  .info-invisible,
+  .info-visible {
     visibility: visible;
   }
   #info-bulle {

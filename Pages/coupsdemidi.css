@@ -1,0 +1,20 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 400px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #1e2133;
+}
+
+.square-visible {
+  visibility: visible;
+}
+
+.square-invisible {
+  visibility: hidden;
+}
