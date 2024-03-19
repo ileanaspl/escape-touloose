@@ -7,7 +7,7 @@ export function devinette() {
 
   const question = createElementWithAttribute("p", { id: "question-devinette" });
   appendOrPrepend("append", "#devinette-container", question);
-  question.innerText = "Combien d'habitants peuplent Toulouse à 100 000 près ?";
+  question.innerText = "Combien d'habitants peuplent Toulouse (à 100 000 près ?)";
 
   const form = createElementWithAttribute("form", { id: "form-devinette" });
   appendOrPrepend("append", "#devinette-container", form);
@@ -26,11 +26,14 @@ export function devinette() {
   title.innerText = "Devinette !";
   appendOrPrepend("append", ".dynamique-content", title);
 
-  const nextButton = createElementWithAttribute("button", { id: "next-button" });
-  nextButton.innerText = "Bouton suivant";
+  const nextButton = createElementWithAttribute("button", {
+    id: "valid-button-devinette",
+    class: "valid-button",
+  });
+  nextButton.innerText = "Valider";
   nextButton.addEventListener("click", () => {
     raz();
     prison();
   });
-  appendOrPrepend("append", ".dynamique-content", nextButton);
+  appendOrPrepend("append", "#form-devinette", nextButton);
 }

@@ -59,7 +59,7 @@
     background-color: transparent;
   }
   #infos {
-    background-color: rgb(125, 132, 178, 0.9);
+    background-color: rgb(125, 132, 178, 0.8);
     border-radius: 20px;
     width: clamp(300px, 30dvw, 500px);
     height: 65dvh;

@@ -4,7 +4,6 @@
   --third-color: #5856d6;
   --primary-font-size: 1rem;
   --secondary-font-size: 1.1rem;
-  --secondary-font-size: 1.1rem;
   --primary-font-family: "Inter", sans-serif;
   --secondary-font-family: "Press Start 2P", system-ui;
   --spacing: 1rem;
@@ -114,6 +113,17 @@ footer {
   animation: crono 99s infinite linear;
 }
 
+.valid-button {
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: var(--third-color);
+  margin-top: 8px;
+  padding: 12px 24px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 @keyframes crono {
   0% {
     text-shadow: 0 0 0 #000;
@@ -124,6 +134,9 @@ footer {
 }
 
 @media screen and (min-width: 900px) {
+  main {
+    max-width: 95%;
+  }
   .dynamique-content {
     width: clamp(500px, 80dvw, 2000px);
   }

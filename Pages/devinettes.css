@@ -1,14 +1,54 @@
 #devinette-container {
   background-color: var(--secondary-color);
   width: 100%;
-  height: 50dvw;
+  height: 55dvh;
+  padding: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
 }
 #question-devinette {
   color: white;
+  text-align: center;
+  width: clamp(300px, 50dvw, 500px);
 }
 #form-devinette {
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 80%;
+  gap: 8px;
 }
 #label-devinette {
   color: white;
+}
+#input-devinette {
+  width: clamp(300px, 70%, 500px);
+  padding-block: 8px;
+  border-radius: 8px;
+}
+#valid-button-devinette {
+  align-self: flex-end;
+}
+@media screen and (min-width: 900px) {
+  #devinette-container {
+    align-self: center;
+
+    width: clamp(300px, 50dvw, 2000px);
+  }
+  #question-devinette {
+    font-size: 1.5rem;
+  }
+  #form-devinette {
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #valid-button-devinette {
+    align-self: center;
+  }
 }
