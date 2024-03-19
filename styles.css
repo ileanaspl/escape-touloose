@@ -67,7 +67,7 @@ main {
   border: solid rgb(198, 194, 194);
 }
 
-main footer {
+main {
   background-image: url(city-toulouse.jpg);
 }
 
@@ -79,6 +79,7 @@ footer {
   display: flex;
   justify-content: center;
 }
+
 .loader {
   display: inline-flex;
   border: 5px solid #5856d6;
@@ -102,18 +103,22 @@ footer {
   color: #0000;
   text-shadow: 0 0 0 #000;
   overflow: hidden;
-  animation: l4 2s infinite linear;
+  animation: crono 99s infinite linear;
 }
 
-.loader::before {
-  animation-duration: 4s;
-}
 
-@keyframes l4 {
+
+@keyframes crono {
+  0% {
+    text-shadow: 0 0 0 #000;
+  }
+
   100% {
-    text-shadow: 0 var(--t, -10em) 0 #000;
+    text-shadow: 0 -100em 0 #000;
+
   }
 }
+
 @media screen and (min-width: 900px) {
   .dynamique-content {
     width: clamp(500px, 80dvw, 2000px);
