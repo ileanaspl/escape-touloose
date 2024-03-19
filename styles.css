@@ -1,8 +1,9 @@
 :root {
   --primary-color: #7d84b2;
-  --secondary-color: red;
+  --secondary-color: #5856d6;
+  --third-color: #5856d6;
   --primary-font-size: 1rem;
-  --secondary-font-size: 1.3rem;
+  --secondary-font-size: 1.1rem;
   --primary-font-family: "Inter", sans-serif;
   --secondary-font-family: "Press Start 2P", system-ui;
   --spacing: 1rem;
@@ -15,6 +16,17 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: url(Assets/city-toulouse.jpg);
+
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
 .avatar {
   border-radius: 50%;
   max-width: 100%;
@@ -22,19 +34,23 @@
 }
 
 .avatar-contener {
-  height: 5dvh;
-  border: solid rgb(198, 194, 194);
+  height: 6dvh;
+
 }
 
 h1 {
   font-family: var(--secondary-font-family);
+  color: #fafafa;
+  font-weight: bold;
+  -webkit-text-stroke: 0.1px black;
 
-  border: solid black;
+
+
   font-size: var(--secondary-font-size);
   display: flex;
   align-items: center;
 
-  border: solid rgb(198, 194, 194);
+
 }
 
 h2 {
@@ -43,47 +59,45 @@ h2 {
 
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
   height: 10dvh;
   background-color: var(--primary-color);
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
-  border: solid black;
+
 }
 
 main {
   height: 80dvh;
-  border: solid rgb(198, 194, 194);
   padding-inline: var(--spacing);
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
   font-family: var(--primary-font-family);
   gap: var(--spacing);
+
 }
 
 .dynamique-content {
   width: 100dvw;
-  border: solid rgb(198, 194, 194);
-}
 
-main footer {
-  background-image: url(city-toulouse.jpg);
 }
 
 footer {
   height: 10dvh;
 
-  border: solid black;
+
 
   display: flex;
   justify-content: center;
 }
+
 .loader {
   display: inline-flex;
-  border: 5px solid #5856d6;
+  border: 5px solid var(--third-color);
   border-radius: 50%;
-  background-color: #5856d6;
+  background-color: var(--third-color);
   border-radius: 50%;
   background: linear-gradient(145deg, #5e5ce5, #4f4dc1);
 }
@@ -98,25 +112,29 @@ footer {
   height: 1em;
   width: 1.2ch;
   text-align: center;
-  outline: 1px solid #000;
+
   color: #0000;
-  text-shadow: 0 0 0 #000;
+
   overflow: hidden;
-  animation: l4 2s infinite linear;
+  animation: crono 99s infinite linear;
 }
 
-.loader::before {
-  animation-duration: 4s;
-}
 
-@keyframes l4 {
+
+@keyframes crono {
+  0% {
+    text-shadow: 0 0 0 #000;
+  }
+
   100% {
-    text-shadow: 0 var(--t, -10em) 0 #000;
+    text-shadow: 0 -100em 0 #000;
+
   }
 }
+
 @media screen and (min-width: 900px) {
   .dynamique-content {
     width: clamp(500px, 80dvw, 2000px);
-    border: solid rgb(198, 194, 194);
+
   }
 }
