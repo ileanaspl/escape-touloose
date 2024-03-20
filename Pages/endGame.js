@@ -4,7 +4,7 @@ import { home } from "./home.js";
 export function endGame() {
   const title = createElementWithAttribute("h2", { id: "title" });
   title.innerText = "The End";
-  appendOrPrepend("append", ".dynamique-content", title);
+  appendOrPrepend("append", ".dynamic-content", title);
 
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Bouton suivant";
@@ -12,5 +12,5 @@ export function endGame() {
     raz();
     home();
   });
-  appendOrPrepend("append", ".dynamique-content", nextButton);
+  appendOrPrepend("append", ".dynamic-content", nextButton);
 }

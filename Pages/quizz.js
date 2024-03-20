@@ -1,5 +1,6 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { coupsdemidi } from "./coupsdemidi.js";
+import { playerInfos } from "../main.js";
 
 export function quizz() {
 
