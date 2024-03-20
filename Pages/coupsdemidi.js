@@ -6,25 +6,31 @@ export function coupsdemidi() {
   title.innerText = "Les 31 coups de midi";
   appendOrPrepend("append", ".dynamic-content", title);
 
-  const nextButton = createElementWithAttribute("button", { id: "next-button", class: "bouton-suivant" });
-  nextButton.innerText = "Suivant";
-  nextButton.addEventListener("click", () => {
-    raz();
-    devinette();
-  });
-  appendOrPrepend("append", ".dynamic-content", nextButton);
-
   const dynamicContent = document.querySelector(".dynamic-content");
+
+  const coupsdemidiContainer = document.createElement("div");
+  coupsdemidiContainer.classList.add("coupsdemidi-container");
+  dynamicContent.appendChild(coupsdemidiContainer);
+
   const gridContainer = document.createElement("div");
   gridContainer.classList.add("grid-container");
-  dynamicContent.appendChild(gridContainer);
+  coupsdemidiContainer.appendChild(gridContainer);
 
   let i;
-  for (i = 0; i < 12; i++) {
+  for (i = 0; i < 15; i++) {
     const square = document.createElement("div");
     square.classList.add("square");
     gridContainer.appendChild(square);
   }
+
+  const nextButton = createElementWithAttribute("button", { id: "next-button" });
+  nextButton.innerText = "Bouton suivant";
+  nextButton.addEventListener("click", () => {
+    raz();
+    devinette();
+  });
+  appendOrPrepend("append", ".coupsdemidi-container", nextButton);
+
 
   square.setAttribute("class", "square-visible");
 

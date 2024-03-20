@@ -1,13 +1,15 @@
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: 400px;
+  width: 350px;
+  border-radius: 5px;
+  justify-content: center;
 }
 
 .square {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   background-color: #1e2133;
 }
 
@@ -19,15 +21,22 @@
   visibility: hidden;
 }
 
+.coupsdemidi-container {
+  background-color: rgb(125, 132, 178, 0.8);
+  ;
+  padding: var(--spacing);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
 
-.bouton-suivant {
-  border: none;
-  text-decoration: none;
-  color: white;
-  background-color: var(--third-color);
-  margin-top: 8px;
-  padding: 12px 24px;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: min-content;
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dynamic-content {
+  align-items: center;
 }
