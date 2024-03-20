@@ -8,6 +8,7 @@
   --secondary-font-family: "Press Start 2P", system-ui;
   --spacing: 1rem;
   --spacing-double: calc(var(--spacing) * 2);
+  --font-primary-color: white;
 }
 
 * {
