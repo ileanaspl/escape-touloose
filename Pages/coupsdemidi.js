@@ -6,25 +6,35 @@ export function coupsdemidi() {
   title.innerText = "Les 31 coups de midi";
   appendOrPrepend("append", ".dynamique-content", title);
 
+  // const title = document.createElement("h2");
+  // title.classList.add("title");
+  // coupsdemidiContainer.appendChild(title);
+
+  const dynamiqueContent = document.querySelector(".dynamique-content");
+
+  const coupsdemidiContainer = document.createElement("div");
+  coupsdemidiContainer.classList.add("coupsdemidi-container");
+  dynamiqueContent.appendChild(coupsdemidiContainer);
+
+  const gridContainer = document.createElement("div");
+  gridContainer.classList.add("grid-container");
+  coupsdemidiContainer.appendChild(gridContainer);
+
+  let i;
+  for (i = 0; i < 15; i++) {
+    const square = document.createElement("div");
+    square.classList.add("square");
+    gridContainer.appendChild(square);
+  }
+
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Bouton suivant";
   nextButton.addEventListener("click", () => {
     raz();
     devinette();
   });
-  appendOrPrepend("append", ".dynamique-content", nextButton);
+  appendOrPrepend("append", ".coupsdemidi-container", nextButton);
 
-  const dynamiqueContent = document.querySelector(".dynamique-content");
-  const gridContainer = document.createElement("div");
-  gridContainer.classList.add("grid-container");
-  dynamiqueContent.appendChild(gridContainer);
-
-  let i;
-  for (i = 0; i < 12; i++) {
-    const square = document.createElement("div");
-    square.classList.add("square");
-    gridContainer.appendChild(square);
-  }
 
   square.setAttribute("class", "square-visible");
 
