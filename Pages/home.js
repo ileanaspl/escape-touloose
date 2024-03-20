@@ -25,10 +25,7 @@ export function home() {
         footer.setAttribute("class", "footer-invisible");
 
 
-        
-
   const nextButton = createElementWithAttribute("button", { id: "next-button",class:"valid-button" });
-
   nextButton.innerText = "C'est parti!";
   nextButton.addEventListener("click", () => {
     // header.innerText += playerName.value;
