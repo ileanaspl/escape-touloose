@@ -32,6 +32,18 @@
   width: 90%;
 }
 
+#next-button {
+
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: var(--third-color);
+  margin-top: 8px;
+  padding: 12px 24px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 main {
   display: flex;
   justify-content: space-between;
