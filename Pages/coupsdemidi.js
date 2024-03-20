@@ -23,7 +23,7 @@ export function coupsdemidi() {
   const imageAndGridContainer = document.createElement("div");
   imageAndGridContainer.classList.add("imageAndGridContainer");
   coupsdemidiContainer.appendChild(imageAndGridContainer);
-  
+
   // ajout de l'image qui sera derrière la grille
   const imageCoupsdemidi = document.createElement("img");
   imageCoupsdemidi.classList.add("imageCoupsdemidi");
@@ -63,10 +63,6 @@ export function coupsdemidi() {
 
   const input = createElementWithAttribute("input", { id: "input-demidi", type: "text", name: "input-demidi" });
   label.appendChild(input)
-
-
-
-
 
 
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
