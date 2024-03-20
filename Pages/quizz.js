@@ -25,19 +25,19 @@ export function quizz() {
 
     const title = createElementWithAttribute("h2", { id: "title" });
     title.innerText = "Quizz page";
-    appendOrPrepend("append", ".dynamique-content", title);
+    appendOrPrepend("append", ".dynamic-content", title);
 
-    const nextButton = createElementWithAttribute("button", { id: "next-button" });
+    const nextButton = createElementWithAttribute("button", { id: "next-button", class: "valid-button" });
     nextButton.innerText = "Bouton suivant";
     nextButton.addEventListener("click", () => {
         raz();
         coupsdemidi();
     });
-    appendOrPrepend("append", ".dynamique-content", nextButton);
+    appendOrPrepend("append", ".dynamic-content", nextButton);
 
     const quizzContainer = createElementWithAttribute("div", { class: "quizz-container" });
 
-    appendOrPrepend("append", ".dynamique-content", quizzContainer);
+    appendOrPrepend("append", ".dynamic-content", quizzContainer);
 
     const interrogation = createElementWithAttribute("h3", { class: "interrogation" });
 

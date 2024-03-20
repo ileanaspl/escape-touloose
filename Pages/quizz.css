@@ -1,0 +1,44 @@
+:root {
+    --primary-color: #7d84b2;
+    --secondary-color: rgb(125, 132, 178, 0.7);
+    --third-color: #5856d6;
+    --primary-font-size: 1rem;
+    --secondary-font-size: 1.1rem;
+    --primary-font-family: "Inter", sans-serif;
+    --secondary-font-family: "Press Start 2P", system-ui;
+    --spacing: 1rem;
+    --spacing-double: calc(var(--spacing) * 2);
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.choix-des-réponses {
+
+    display: flex;
+    justify-content: space-between;
+    background: #fbca1f;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+}
+
+.choix-des-réponses:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+.choix-des-réponses:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
