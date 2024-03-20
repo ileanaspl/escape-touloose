@@ -6,8 +6,8 @@ export function coupsdemidi() {
   title.innerText = "Les 31 coups de midi";
   appendOrPrepend("append", ".dynamic-content", title);
 
-  const nextButton = createElementWithAttribute("button", { id: "next-button" });
-  nextButton.innerText = "Bouton suivant";
+  const nextButton = createElementWithAttribute("button", { id: "next-button", class: "bouton-suivant" });
+  nextButton.innerText = "Suivant";
   nextButton.addEventListener("click", () => {
     raz();
     devinette();
