@@ -23,8 +23,33 @@ export function coupsdemidi() {
     gridContainer.appendChild(square);
   }
 
+
+
+
+  const form = createElementWithAttribute("form", { class: "form-demidi" });
+  coupsdemidiContainer.appendChild(form);
+
+  const hintText = createElementWithAttribute("p", { class: "hint" })
+  form.appendChild(hintText);
+  hintText.innerText = "Tapez votre réponse"
+
+
+  const label = createElementWithAttribute("label", {
+    id: "label-demidi",
+    for: "input-demidi",
+  });
+  form.appendChild(label);
+
+
+  const input = createElementWithAttribute("input", { id: "input-demidi", type: "text", name: "input-demidi" });
+  label.appendChild(input)
+
+
+
+
+
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
-  nextButton.innerText = "Bouton suivant";
+  nextButton.innerText = "Suivant";
   nextButton.addEventListener("click", () => {
     raz();
     devinette();
