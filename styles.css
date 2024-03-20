@@ -71,7 +71,7 @@ main {
   gap: var(--spacing);
 }
 
-.dynamique-content {
+.dynamic-content {
   width: 100dvw;
   display: flex;
   flex-direction: column;
@@ -137,7 +137,7 @@ footer {
   main {
     max-width: 95%;
   }
-  .dynamique-content {
+  .dynamic-content {
     width: clamp(500px, 80dvw, 2000px);
   }
 }

@@ -2,7 +2,7 @@
 
 //Fonction de remise à zero de la balise main (utile à chaque changement de page)
 export function raz() {
-  const main = document.querySelector(".dynamique-content");
+  const main = document.querySelector(".dynamic-content");
   main.innerHTML = "";
 }
 

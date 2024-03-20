@@ -5,10 +5,10 @@ import { playerInfos } from "../main.js";
 export function home() {
   const title = createElementWithAttribute("h2", { id: "title" });
   title.innerText = "Home page";
-  appendOrPrepend("append", ".dynamique-content", title);
+  appendOrPrepend("append", ".dynamic-content", title);
 
   const form = createElementWithAttribute("form", {});
-  appendOrPrepend("prepend", ".dynamique-content", form);
+  appendOrPrepend("prepend", ".dynamic-content", form);
 
   const labelPlayerName = createElementWithAttribute("label", { for: "player-name" });
   labelPlayerName.innerText = "Entrer votre pseudo";
@@ -27,5 +27,5 @@ export function home() {
     raz();
     quizz();
   });
-  appendOrPrepend("append", ".dynamique-content", nextButton);
+  appendOrPrepend("append", ".dynamic-content", nextButton);
 }
