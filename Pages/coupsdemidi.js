@@ -58,8 +58,12 @@ export function coupsdemidi() {
   form.appendChild(label);
 
 
-  const input = createElementWithAttribute("input", { id: "input-demidi", type: "text", name: "input-demidi" });
+  const input = createElementWithAttribute("input", { id: "input-demidi", type: "text", name: "input-demidi", placeholder: " votre réponse " });
   label.appendChild(input)
+  let inputValue = ""
+  input.addEventListener("change", (event) => { inputValue = event.target.value; console.log(inputValue); });
+
+
 
 
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
@@ -69,6 +73,15 @@ export function coupsdemidi() {
     devinette();
   });
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
+
+
+
+
+
+
+  // }
+  //}
+
 
 
   // square.setAttribute("class", "square-visible");
