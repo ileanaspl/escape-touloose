@@ -48,6 +48,7 @@ export function coupsdemidi() {
 
 
 
+
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Suivant";
   nextButton.addEventListener("click", () => {
