@@ -2,9 +2,6 @@ import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/ut
 import { devinette } from "./devinettes.js";
 
 export function coupsdemidi() {
-  const title = createElementWithAttribute("h2", { id: "title" });
-  title.innerText = "Les 31 coups de midi";
-  appendOrPrepend("append", ".dynamic-content", title);
 
   const dynamicContent = document.querySelector(".dynamic-content");
 

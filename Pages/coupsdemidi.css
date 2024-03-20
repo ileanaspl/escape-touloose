@@ -7,9 +7,11 @@
   border-radius: 5px;
   justify-content: center;
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   top: 0;
   left: 0;
+  border: solid 3px white;
+  border-radius: 5px;
 
 }
 
@@ -63,14 +65,13 @@ main {
 
 .imageCoupsdemidi {
   width: 100%;
-  z-index: 0;
+  position: relative;
+  z-index: -3;
 }
 
 .imageAndGridContainer {
   position: relative;
   width: 100%;
   max-width: 472px;
-  border: solid 3px white;
-  border-radius: 5px;
 }
 
