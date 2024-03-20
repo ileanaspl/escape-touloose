@@ -33,5 +33,5 @@ export function home() {
     raz();
     quizz();
   });
-  appendOrPrepend("append", ".dynamique-content", nextButton);
+  appendOrPrepend("append", ".dynamic-content", nextButton);
 }
