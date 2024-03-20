@@ -7,11 +7,9 @@
   border-radius: 5px;
   justify-content: center;
   position: absolute;
-  z-index: -1;
   top: 0;
   left: 0;
   border: solid 3px white;
-  border-radius: 5px;
 
 }
 
@@ -28,13 +26,15 @@
 }
 
 .coupsdemidi-container {
-  background-color: rgb(125, 132, 178, 0.8);
+  background-color: rgb(125, 132, 178, 0.7);
   padding: var(--spacing);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90%;
+  position: relative;
+  z-index: -1;
 }
 
 #next-button {
@@ -66,7 +66,7 @@ main {
 .imageCoupsdemidi {
   width: 100%;
   position: relative;
-  z-index: -3;
+  z-index: 0;
 }
 
 .imageAndGridContainer {
