@@ -4,7 +4,7 @@ import { devinette } from "./devinettes.js";
 export function coupsdemidi() {
   const title = createElementWithAttribute("h2", { id: "title" });
   title.innerText = "Les 31 coups de midi";
-  appendOrPrepend("append", ".dynamique-content", title);
+  appendOrPrepend("append", ".dynamic-content", title);
 
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Bouton suivant";
@@ -12,12 +12,12 @@ export function coupsdemidi() {
     raz();
     devinette();
   });
-  appendOrPrepend("append", ".dynamique-content", nextButton);
+  appendOrPrepend("append", ".dynamic-content", nextButton);
 
-  const dynamiqueContent = document.querySelector(".dynamique-content");
+  const dynamicContent = document.querySelector(".dynamic-content");
   const gridContainer = document.createElement("div");
   gridContainer.classList.add("grid-container");
-  dynamiqueContent.appendChild(gridContainer);
+  dynamicContent.appendChild(gridContainer);
 
   let i;
   for (i = 0; i < 12; i++) {

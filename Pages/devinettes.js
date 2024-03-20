@@ -3,7 +3,7 @@ import { prison } from "./prison.js";
 
 export function devinette() {
   const devinetteContainer = createElementWithAttribute("div", { id: "devinette-container" });
-  appendOrPrepend("prepend", ".dynamique-content", devinetteContainer);
+  appendOrPrepend("prepend", ".dynamic-content", devinetteContainer);
 
   const question = createElementWithAttribute("p", { id: "question-devinette" });
   appendOrPrepend("append", "#devinette-container", question);
@@ -24,7 +24,7 @@ export function devinette() {
 
   const title = createElementWithAttribute("h2", { id: "title" });
   title.innerText = "Devinette !";
-  appendOrPrepend("append", ".dynamique-content", title);
+  appendOrPrepend("append", ".dynamic-content", title);
 
   const nextButton = createElementWithAttribute("button", {
     id: "valid-button-devinette",
