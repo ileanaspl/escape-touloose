@@ -1,75 +1,175 @@
-const quizz = document.querySelector("main");
+import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
+import { coupsdemidi } from "./coupsdemidi.js";
+
+export function quizz() {
+
+    const questions = [
+        {
+            question: "Quelle bâtiment crée en 1190 est devenu un lieu emblématique de Toulouse ? ",
+            options: ["Le palais Niel", "La basilique saint sernin", "Le Capitole", "Le couvent des Jacobins"],
+            reponse: "Le Capitole"
+        },
+        {
+            question: "Quel est le secteur d’activité qui rapporte le plus économiquement à la ville de Toulouse ?",
+            options: ["L’élevage / Vente de canard", "L’automobile", "Le Tourisme", "L’aerospatial / Aeronautique"],
+            reponse: "L’aerospatial / Aeronautique"
+        },
+        {
+            question: "En quelle année la bataille de Toulouse a été gagnée ?",
+            options: ["720", "721", "722", "723"],
+            reponse: "721"
+        }
+    ];
+
+
+    const title = createElementWithAttribute("h2", { id: "title" });
+    title.innerText = "Quizz page";
+    appendOrPrepend("append", ".dynamique-content", title);
+
+    const nextButton = createElementWithAttribute("button", { id: "next-button" });
+    nextButton.innerText = "Bouton suivant";
+    nextButton.addEventListener("click", () => {
+        raz();
+        coupsdemidi();
+    });
+    appendOrPrepend("append", ".dynamique-content", nextButton);
+
+    const quizzContainer = createElementWithAttribute("div", { class: "quizz-container" });
+
+    appendOrPrepend("append", ".dynamique-content", quizzContainer);
+
+    const interrogation = createElementWithAttribute("h3", { class: "interrogation" });
+
+    appendOrPrepend("append", ".quizz-container", interrogation);
+
+    const choixRéponse = createElementWithAttribute("div", { class: "choix-des-réponses" });
+
+    appendOrPrepend("append", ".quizz-container", choixRéponse);
 
 
 
-const questions = [{ question1: "", picture: "" },
-{
-    question2: "", picture: ""
-}]
-
-// à remplire des questions et des images corespondantes 
-
-const correctAnswer = ["", "", ""]
-
-// à remplire des reponses 
-
-const radioButton = document.querySelector("input.type")
+    let currentQuestionIndex = 0;
+    let score = 0;
 
 
+    // Fonction pour afficher la question actuelle
+    function afficherQuestion() {
+        interrogation.innerText = questions[currentQuestionIndex].question
+        const question = questions[currentQuestionIndex];
+        // console.log(question.question);
 
-function click() {
-    if (addeventlistener.radioButton === correctAnswer) {
-        createquizz
-        // aller à la prochaine question 
-    } else {
-        // prison 
+        question.options.forEach((option, index) => {
+            const optionElement = document.createElement('button');
+            optionElement.textContent = (index + 1) + '. ' + option;
+            optionElement.addEventListener('click', () => repondre(index));
+            choixRéponse.appendChild(optionElement);
+        });
     }
+
+    // Fonction pour traiter la réponse de l'utilisateur
+    function repondre(selectedIndex) {
+        const question = questions[currentQuestionIndex];
+        const choice = question.options[selectedIndex];
+
+
+
+        if (choice === question.reponse) {
+            score++;
+            console.log("Bonne réponse !");
+        } else {
+            console.log(`Mauvaise réponse. La bonne réponse est : ${question.reponse}`);
+        }
+
+        currentQuestionIndex++;
+        console.log(currentQuestionIndex);
+        // Effacer les options précédentes
+        interrogation.innerText = '';
+        choixRéponse.innerHTML = "";
+
+
+        // Passer à la prochaine question ou afficher le score final    
+        if (currentQuestionIndex < questions.length) {
+            afficherQuestion();
+        } else {
+            console.log(`Votre score final est de ${score}/${questions.length}`);
+        }
+
+    }
+    afficherQuestion();
+    // Lancer le quiz
+
+
+
+
 }
 
-//fonction de validation ou non de la reponse 
-
-function createquizz() {
-    const quizz2 = document.createElement("main")
-    questions.classList.add("main")
-    main.appendchild(quizz2)
-}
-
-// fonction de creation de nouveau quizz 
 
 
-// for (let i = 0; i < correctAnswer.length; i++ ) {
+//     const questions = [
+//         {
+//             question: "Quelle bâtiment crée en 1190 est devenu un lieu emblématique de Toulouse ? ",
+//             options: ["Le palais Niel", "La basilique saint sernin", "Le Capitole", "Le couvent des Jacobins"],
+//             reponse: "Le Capitole"
+//         },
+//         {
+//             question: "Quel est le secteur d’activité qui rapporte le plus économiquement à la ville de Toulouse ?",
+//             options: ["L’élevage / Vente de canard", "L’automobile", "Le Tourisme", "L’aerospatial / Aeronautique"],
+//             reponse: "L’aerospatial / Aeronautique"
+//         },
+//         {
+//             question: "En quelle année la bataille de Toulouse a été gagnée ?",
+//             options: ["720", "721", "722", "723"],
+//             reponse: "721"
+//         }
+//     ];
 
-//     if () 
+//     let currentQuestionIndex = 0;
+//     let score = 0;
 
-// }
+//     // Fonction pour afficher la question actuelle
+//     function afficherQuestion() {
+//         const question = questions[currentQuestionIndex];
+//         const body = document.getElementsByTagName('dynamique-content')[0];
 
-// autre approche 
+//         const questionElement = document.createElement('p');
+//         questionElement.textContent = question.question;
+//         body.appendChild(questionElement);
 
-const question = [{
-    question1: "",
-    choix: "",
-    picture: "",
-    reponseCorrect: "",
-},
-{
-    question1: "",
-    choix: "",
-    picture: "",
-    reponseCorrect: "",
-}]
+//         question.options.forEach((option, index) => {
+//             const optionElement = document.createElement('button');
+//             optionElement.textContent = (index + 1) + '. ' + option;
+//             optionElement.addEventListener('click', () => repondre(index));
+//             body.appendChild(optionElement);
+//         });
+//     }
 
-let questionCourante = 0
+//     // Fonction pour traiter la réponse de l'utilisateur
+//     function repondre(selectedIndex) {
+//         const question = questions[currentQuestionIndex];
+//         const choice = question.options[selectedIndex];
 
-let score = 0
+//         if (choice === question.reponse) {
+//             score++;
+//         }
 
-function chek() {
-    if (question === reponseCorrect) {
+//         currentQuestionIndex++;
 
-        // nouveau quizz
+//         // Effacer les options précédentes
+//         const body = document.getElementsByTagName('dynamique-content')[0];
+//         body.innerHTML = '';
 
-    }
-    else {
+//         // Passer à la prochaine question ou afficher le score final
+//         if (currentQuestionIndex < questions.length) {
+//             afficherQuestion();
+//         } else {
+//             const scoreElement = document.createElement('p');
+//             scoreElement.textContent = `Votre score final est de ${score}/${questions.length}`;
+//             body.appendChild(scoreElement);
+//         }
+//     }
 
-        // prison
-    }
-}
+//     // Lancer le quiz
+//     afficherQuestion();
+
+
+
