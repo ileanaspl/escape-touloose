@@ -7,7 +7,7 @@ export function quizz() {
 
   const title = createElementWithAttribute("h2", { id: "title" });
   title.innerText = "Quizz page";
-  appendOrPrepend("append", ".dynamique-content", title);
+  appendOrPrepend("append", ".dynamic-content", title);
 
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Bouton suivant";
@@ -15,5 +15,5 @@ export function quizz() {
     raz();
     coupsdemidi();
   });
-  appendOrPrepend("append", ".dynamique-content", nextButton);
+  appendOrPrepend("append", ".dynamic-content", nextButton);
 }

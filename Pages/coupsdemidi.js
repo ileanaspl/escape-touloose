@@ -4,17 +4,13 @@ import { devinette } from "./devinettes.js";
 export function coupsdemidi() {
   const title = createElementWithAttribute("h2", { id: "title" });
   title.innerText = "Les 31 coups de midi";
-  appendOrPrepend("append", ".dynamique-content", title);
+  appendOrPrepend("append", ".dynamic-content", title);
 
-  // const title = document.createElement("h2");
-  // title.classList.add("title");
-  // coupsdemidiContainer.appendChild(title);
-
-  const dynamiqueContent = document.querySelector(".dynamique-content");
+  const dynamicContent = document.querySelector(".dynamic-content");
 
   const coupsdemidiContainer = document.createElement("div");
   coupsdemidiContainer.classList.add("coupsdemidi-container");
-  dynamiqueContent.appendChild(coupsdemidiContainer);
+  dynamicContent.appendChild(coupsdemidiContainer);
 
   const gridContainer = document.createElement("div");
   gridContainer.classList.add("grid-container");

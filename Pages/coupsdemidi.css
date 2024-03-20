@@ -3,7 +3,6 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
   width: 350px;
-  border: solid 3px white;
   border-radius: 5px;
   justify-content: center;
 }
@@ -37,6 +36,6 @@ main {
     justify-content: space-between;
 }
 
-.dynamique-content {
+.dynamic-content {
     align-items: center;
 }
