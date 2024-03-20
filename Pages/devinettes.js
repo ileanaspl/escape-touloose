@@ -16,6 +16,7 @@ export function devinette() {
     id: "label-devinette",
     for: "input-devinette",
   });
+
   label.innerText = "Votre réponse";
   appendOrPrepend("append", "#form-devinette", label);
 
