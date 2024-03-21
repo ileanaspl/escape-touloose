@@ -2,13 +2,16 @@
   --primary-color: #7d84b2;
   --secondary-color: rgb(125, 132, 178, 0.7);
   --third-color: #5856d6;
+  --font-primary-color: white;
+  --info-bulle-color: rgb(53, 58, 90, 0.9);
+
   --primary-font-size: 1rem;
   --secondary-font-size: 1.1rem;
   --primary-font-family: "Inter", sans-serif;
   --secondary-font-family: "Press Start 2P", system-ui;
+
   --spacing: 1rem;
   --spacing-double: calc(var(--spacing) * 2);
-  --font-primary-color: white;
 }
 
 * {
