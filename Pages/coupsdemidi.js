@@ -71,6 +71,9 @@ export function coupsdemidi() {
 
 
 
+
+
+
   const form = createElementWithAttribute("form", { class: "form-demidi" });
   coupsdemidiContainer.appendChild(form);
 
@@ -102,13 +105,11 @@ export function coupsdemidi() {
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Suivant";
   nextButton.addEventListener("click", () => {
-    if (inputValue === images[randomIndex].answerExpected) { console.log("reussi") }
+    if (inputValue.toLowerCase() === images[randomIndex].answerExpected) { console.log("reussi") }
     else { console.log("echec de la mission") }
     raz();
     welcomeInTheNeighborhood("dans le quartier de la Daurade", devinette);
   });
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
-
-
 
 }
