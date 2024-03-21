@@ -3,35 +3,64 @@ import { quizz } from "./quizz.js";
 import { playerInfos } from "../main.js";
 
 export function home() {
-  const header = document.querySelector("header");
-        header.setAttribute("class", "header-invisible");
+
+    const dynamicContent = document.querySelector(".dynamic-content");
+      const header = document.querySelector("header");
+            header.setAttribute("class", "header-invisible");
 
 
-  const title = createElementWithAttribute("h2", { id: "title" });
-  title.innerText = "Escape Touloose";
-  appendOrPrepend("prepend", ".dynamique-content", title);
+      const title = createElementWithAttribute("h2", { id: "title" });
+      title.innerText = "Escape Touloose";
+      appendOrPrepend("prepend", ".dynamic-content", title);
+        
+      const homeContainer = document.createElement("div");
+      homeContainer.classList.add("home-container");
+      dynamicContent.appendChild(homeContainer);
 
-  const form = createElementWithAttribute("form", {});
-  appendOrPrepend("append", ".dynamique-content", form);
+      const rdj = createElementWithAttribute("h2", { id: "rdj"});
+      rdj.innerText = "Règles du jeu";
+      appendOrPrepend("append", ".home-container", rdj);
 
-  const labelPlayerName = createElementWithAttribute("label", { for: "player-name" });
-  labelPlayerName.innerText = "Entrer votre nom";
-  appendOrPrepend("append", "form", labelPlayerName);
+      //const form = createElementWithAttribute("form", {});
+      //appendOrPrepend("append", ".dynamic-content", form);
 
-  const playerName = createElementWithAttribute("input", { id: "player-name", type: "text" });
-  appendOrPrepend("append", "form", playerName);
+      
 
-  const footer = document.querySelector("footer");
+      const paragraphrdj = createElementWithAttribute("p", { id: "paragraphrdj"});
+          paragraphrdj.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis condimentum justo, vel bibendum massa. Quisque ultricies felis id ornare egestas. Pellentesque tempus sed justo at vehicula. Praesent a lectus in nunc aliquet scelerisque at vestibulum nisi.";
+          homeContainer.appendChild(paragraphrdj);
+          
+          const myleneImage = document.createElement("img");
+          myleneImage.src = "./Assets/mylene-modified.png"; 
+          myleneImage.alt = "Mylène Farmer";
+          myleneImage.id = "mylene-avatar";
+          dynamicContent.appendChild(myleneImage);
+
+        const footer = document.querySelector("footer");
         footer.setAttribute("class", "footer-invisible");
 
-
-  const nextButton = createElementWithAttribute("button", { id: "next-button",class:"valid-button" });
-  nextButton.innerText = "C'est parti!";
-  nextButton.addEventListener("click", () => {
-    // header.innerText += playerName.value;
-    // playerInfos.playerName = playerName.value;
-    raz();
-    quizz();
-  });
-  appendOrPrepend("append", ".dynamic-content", nextButton);
+        const nextButton = createElementWithAttribute("button", { id: "next-button", class: "valid-button" });
+        nextButton.innerText = "C'est parti!";
+        
+        nextButton.addEventListener("click", () => {
+            const myleneImage = document.getElementById("mylene-avatar");
+            if (myleneImage) {
+                myleneImage.remove();
+            }
+            const paragraphrdj = document.getElementById("paragraphrdj");
+            if (paragraphrdj) {
+                paragraphrdj.remove();
+            }
+            raz();
+            quizz();
+        });
+        
+        appendOrPrepend("append", ".dynamic-content", nextButton);
+        
 }
+
+
+
+
+
+

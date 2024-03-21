@@ -4,6 +4,56 @@
 .footer-invisible {
     display: none;
 }
-.next-button {
-    color: blue;
+#title {
+    width: 300px;
+    left: calc(50% - 300px/2 - 0.5px);
+    top: 8.22%;
+    bottom: 88.26%;
+
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #FAFAFA;
 }
+#rdj {
+
+font-family: 'Inter';
+font-style: normal;
+font-size: 24px;
+color: #EEEEFB;
+padding: 1rem;
+}
+#next-button {
+    width: 50%;
+    margin: 1rem;
+
+}
+#mylene-avatar {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border: solid 2px white;
+        
+    }
+#paragraphrdj {
+    top: 250px;
+    left: 90px;
+    color: #EEEEFB;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: smaller;
+    margin: 0.65rem;
+    
+}
+
+.home-container {
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
