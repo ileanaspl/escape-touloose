@@ -31,7 +31,7 @@ export function coupsdemidi() {
   coupsdemidiContainer.appendChild(imageAndGridContainer);
 
   // creation de la fonction des images au hasard
-  let images = [{ path: "./assets/canal-midi.jpg", answerExpected: "canal du midi" }, { path: "./assets/basilique.jpg", answerExpected: "basilique st-sernin" }, { path: "./assets/capitole.jpg", answerExpected: "capitole" }];
+  let images = [{ path: "./Assets/canal-midi.jpg", answerExpected: "canal du midi" }, { path: "./Assets/basilique.jpg", answerExpected: "basilique st-sernin" }, { path: "./Assets/capitole.jpg", answerExpected: "capitole" }];
   let imageGame = document.createElement("img",);
   imageGame.classList.add("image-toulouse");
   let randomIndex = Math.floor(Math.random() * images.length);
