@@ -33,6 +33,7 @@ export function quizz() {
         raz();
         coupsdemidi();
     });
+
     appendOrPrepend("append", ".dynamic-content", nextButton);
 
     const quizzContainer = createElementWithAttribute("div", { class: "quizz-container" });
@@ -61,6 +62,7 @@ export function quizz() {
 
         question.options.forEach((option, index) => {
             const optionElement = document.createElement('button');
+            optionElement.classList.add('valid-button')
             optionElement.textContent = (index + 1) + '. ' + option;
             optionElement.addEventListener('click', () => repondre(index));
             choixRéponse.appendChild(optionElement);
@@ -99,10 +101,28 @@ export function quizz() {
     afficherQuestion();
     // Lancer le quiz
 
+    // timer
 
+    // const timerElement = document.getElementById("loader");
+    // let seconds = 15;
 
+    // function updateTimer() {
+    //     timerElement.innerText = seconds;
+    //     seconds--;
+
+    //     if (seconds < 0) {
+    //         clearInterval(timerInterval);
+    //         timerElement.innerText = "Temps écoulé !";
+    //     }
+    // }
+
+    // const timerInterval = setInterval(updateTimer, 1000);
 
 }
+
+
+
+
 
 
 
@@ -171,6 +191,4 @@ export function quizz() {
 
 //     // Lancer le quiz
 //     afficherQuestion();
-
-
 
