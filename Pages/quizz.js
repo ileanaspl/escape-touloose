@@ -97,32 +97,34 @@ export function quizz() {
             console.log(`Votre score final est de ${score}/${questions.length}`);
         }
 
+
+        const departSeconde = 20
+
+
+        const timerElement = document.getElementsByClassName(".loader")
+        timerElement.innerText = departSeconde
+
+        const interval = setInterval(() => {
+            // let secondes = parseInt(temps % 20, 10)
+
+
+            // secondes = secondes < 10 ? "0" + secondes : secondes
+
+            // timerElement.innerText = `${secondes}`
+            // temps = temps <= 0 ? 0 : temps - 1
+
+
+        }, 1000)
+
+        if (temps === 0) {
+            clearInterval(interval)
+        }
+        // console.log(interval);
     }
     afficherQuestion();
     // Lancer le quiz
 
-    // timer
-
-    // const timerElement = document.getElementById("loader");
-    // let seconds = 15;
-
-    // function updateTimer() {
-    //     timerElement.innerText = seconds;
-    //     seconds--;
-
-    //     if (seconds < 0) {
-    //         clearInterval(timerInterval);
-    //         timerElement.innerText = "Temps écoulé !";
-    //     }
-    // }
-
-    // const timerInterval = setInterval(updateTimer, 1000);
-
 }
-
-
-
-
 
 
 
