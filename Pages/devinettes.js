@@ -1,6 +1,7 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { prison } from "./prison.js";
 import { questions, playerInfos } from "../main.js";
+import { endGame } from "./endGame.js";
 
 export function devinette() {
   const devinetteContainer = createElementWithAttribute("div", { id: "devinette-container" });
@@ -72,7 +73,7 @@ export function devinette() {
       if (localScore === 0) {
         prison();
       } else {
-        alert("il faut faire la endpage là non ?");
+        welcomeInTheNeighborhood("dans le quartier de la Daurade", endGame, 2);
       }
     }
   });

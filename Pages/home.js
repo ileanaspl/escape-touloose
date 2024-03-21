@@ -1,6 +1,7 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { quizz } from "./quizz.js";
 import { playerInfos } from "../main.js";
+import { welcomeInTheNeighborhood } from "./intersection.js";
 
 export function home() {
   const title = createElementWithAttribute("h2", { id: "title" });
@@ -25,7 +26,7 @@ export function home() {
     // header.innerText += playerName.value;
     // playerInfos.playerName = playerName.value;
     raz();
-    quizz();
+    welcomeInTheNeighborhood("dans le quartier de la Daurade", quizz, 0);
   });
   appendOrPrepend("append", ".dynamic-content", nextButton);
 }

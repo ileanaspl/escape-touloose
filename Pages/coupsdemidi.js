@@ -1,6 +1,7 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { devinette } from "./devinettes.js";
 import { welcomeInTheNeighborhood } from "./intersection.js";
+import { playerInfos } from "../main.js";
 import { prison } from "./prison.js";
 
 export function coupsdemidi() {
@@ -31,7 +32,7 @@ export function coupsdemidi() {
   coupsdemidiContainer.appendChild(imageAndGridContainer);
 
   // creation de la fonction des images au hasard
-  let images = [{ path: "./assets/canal-midi.jpg", answerExpected: "canal du midi" }, { path: "./assets/basilique.jpg", answerExpected: "basilique st-sernin" }, { path: "./assets/capitole.jpg", answerExpected: "capitole" }];
+  let images = [{ path: "./Assets/canal-midi.jpg", answerExpected: "canal du midi" }, { path: "./Assets/basilique.jpg", answerExpected: "basilique st-sernin" }, { path: "./Assets/capitole.jpg", answerExpected: "capitole" }];
   let imageGame = document.createElement("img",);
   imageGame.classList.add("image-toulouse");
   let randomIndex = Math.floor(Math.random() * images.length);
@@ -108,10 +109,14 @@ export function coupsdemidi() {
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Suivant";
   nextButton.addEventListener("click", () => {
-    if (inputValue.toLowerCase() === images[randomIndex].answerExpected) { console.log("reussi") }
+    if (inputValue.toLowerCase() === images[randomIndex].answerExpected) {
+      playerInfos.score += 2
+      console.log("reussi")
+      console.log(playerInfos)
+    }
     else { console.log("echec de la mission") }
     raz();
-    welcomeInTheNeighborhood("dans le quartier de la Daurade", devinette);
+    welcomeInTheNeighborhood("dans le quartier de la Daurade", devinette, 0);
   });
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
 

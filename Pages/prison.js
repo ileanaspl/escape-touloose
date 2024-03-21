@@ -10,7 +10,7 @@ export function prison() {
   nextButton.innerText = "Bouton suivant";
   nextButton.addEventListener("click", () => {
     raz();
-    endGame();
+    home();
   });
   appendOrPrepend("append", ".dynamic-content", nextButton);
 }
