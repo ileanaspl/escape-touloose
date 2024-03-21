@@ -90,8 +90,8 @@ footer {
 
 .loader {
   display: inline-flex;
-  border: 5px solid var(--third-color);
-  border: 5px solid var(--third-color);
+  border: 20px solid var(--third-color);
+
   border-radius: 50%;
   background-color: var(--third-color);
   background-color: var(--third-color);
@@ -99,9 +99,9 @@ footer {
   background: linear-gradient(145deg, #5e5ce5, #4f4dc1);
 }
 
-.loader::before,
+/*.loader::before,
 .loader::after {
-  content: "0 1 2 3 4 5 6 7 8 9 0";
+  /* content: "0 1 2 3 4 5 6 7 8 9 0";
   font-size: 30px;
   font-family: monospace;
   font-weight: bold;
@@ -113,9 +113,9 @@ footer {
   color: #0000;
 
   overflow: hidden;
-  animation: crono 99s infinite linear;
-  animation: crono 99s infinite linear;
-}
+   animation: crono 99s infinite linear;
+  animation: crono 99s infinite linear; 
+}*/
 
 .valid-button {
   border: none;
@@ -132,7 +132,7 @@ footer {
   visibility: hidden;
 }
 
-@keyframes crono {
+/*@keyframes crono {
   0% {
     text-shadow: 0 0 0 #000;
   }
@@ -140,7 +140,7 @@ footer {
   100% {
     text-shadow: 0 -100em 0 #000;
   }
-}
+}*/
 
 @media screen and (min-width: 900px) {
   main {
