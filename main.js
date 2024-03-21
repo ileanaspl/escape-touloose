@@ -1,6 +1,7 @@
 import { raz } from "./Services/util.js";
 import { home } from "./Pages/home.js";
 import { hud } from "./Pages/hud.js";
+import { welcomeInTheNeighborhood } from "./Pages/intersection.js";
 
 export const playerInfos = { playerName: "", score: 0, totalTime: 0 };
 

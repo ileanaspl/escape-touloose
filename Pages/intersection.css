@@ -1,0 +1,32 @@
+#welcome-container {
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: 55dvh;
+  padding: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
+}
+#welcome-paragraphe {
+  color: white;
+  text-align: center;
+  width: clamp(300px, 50dvw, 500px);
+}
+#valid-button-welcome {
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 900px) {
+  #welcome-container {
+    align-self: center;
+    width: clamp(300px, 50dvw, 2000px);
+  }
+  #welcome-paragraphe {
+    font-size: 1.5rem;
+  }
+  #valid-button-welcome {
+    align-self: center;
+  }
+}

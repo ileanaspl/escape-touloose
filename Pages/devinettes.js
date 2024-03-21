@@ -37,6 +37,7 @@ export function devinette() {
 
   let countClick = 0;
   let localScore = 0;
+
   nextButton.addEventListener("click", (event) => {
     event.preventDefault();
     nextButton.classList.toggle("element-disabled");
@@ -61,8 +62,8 @@ export function devinette() {
             : `Avec votre score  ${
                 localScore === 2
                   ? " exceptionnel de deux réponses correctes sur deux"
-                  : "'acceptable' d'une réponse correcte sur deux"
-              }, vous pouvez changer de quatier`;
+                  : `"acceptable" d'une réponse correcte sur deux`
+              }, vous pouvez changer de quartier`;
         nextButton.classList.toggle("element-disabled");
         nextButton.innerText = localScore === 0 ? "Allez, au trou !" : `On continue !`;
       }, 2000);
