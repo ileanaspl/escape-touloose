@@ -1,6 +1,8 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { devinette } from "./devinettes.js";
 import { welcomeInTheNeighborhood } from "./intersection.js";
+import { prison } from "./prison.js";
+import { endGame } from "./endGame.js";
 
 export function coupsdemidi() {
   const dynamicContent = document.querySelector(".dynamic-content");
@@ -42,7 +44,7 @@ export function coupsdemidi() {
 
   // création de tous les carrés qui seront dans la grille
   let i;
-  for (i = 0; i < 135; i++) {
+  for (i = 0; i < 32; i++) {
     const square = document.createElement("div");
     square.classList.add("square");
     gridContainer.appendChild(square);
@@ -55,14 +57,23 @@ export function coupsdemidi() {
     square.classList.add("square-visible")
   });
 
+let countToIncarsereted = 0 
+
   // fonction pour ajouter aléatoirement la classe square-invisible à un carré
   function makeSquareInvisible() {
     const random = Math.floor(Math.random() * squares.length)
     squares[random].classList.add("square-invisible");
   }
 
-  // méthode pour faire fonctionner la fonction makeSquareInvisible toutes les 300 millièmes de seconde
-  setInterval(makeSquareInvisible, 300);
+  // méthode pour faire fonctionner la fonction makeSquareInvisible toutes les 300 millièmes de seconde et si la bonne réponse n'est pas trouvée -> case prison
+ const countFunction = setInterval(() => { makeSquareInvisible()
+    countToIncarsereted ++
+    console.log(countToIncarsereted)
+  if(countToIncarsereted === 60) { 
+    clearInterval(countFunction) 
+    raz ();
+    prison();
+  }}, 300);
 
   const form = createElementWithAttribute("form", { class: "form-demidi" });
   coupsdemidiContainer.appendChild(form);
@@ -99,6 +110,22 @@ export function coupsdemidi() {
   });
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
 
-
+  // fonction si tous les carrés sont invisibles
+  function allInvisible() {
+    const allInvisible = Array.from(squares).every(square => square.classList.contains(".square-invisible"));
+  }
+  // fonction qui permet de faire perdre le joueur si jamais l'image est dévoilé entièrement
+  // let scoreCoupsdemidi = 2
+  // function youLoseCoupsdemidi() {
+  //   if (scoreCoupsdemidi === 0) {
+  //     raz()
+  //     prison()
+  //   } else if (scoreCoupsdemidi === 1) {
+  //     raz()
+  //     endGame()
+  //   }
+  // }
  
+  // si tous les carrés ont disparu -> envoyer la fonction prison()
+  
 }

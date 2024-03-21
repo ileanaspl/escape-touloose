@@ -10,6 +10,8 @@
   max-width: 32px;
   top: 15%;
   right: 2%;
+  background-color: var(--font-primary-color);
+  border-radius: 50%;
 }
 
 #info-container {
