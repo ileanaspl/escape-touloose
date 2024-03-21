@@ -43,12 +43,19 @@ export function coupsdemidi() {
 
 
   // tableau image du jeux
-  let imagesPaths = ["./assets/canal-midi.jpg"(id = "canal_du_midi"), "./assets/basilique.jpg"(id = "basilique-st-sernin"), "./assets/capitole.jpg"(id = "capitole")];
-  let imageGame = document.createAttribute("img");
-  imageGame.src = imagesPaths
-  imageAndGridContainer.appendChild(imageGame[])
+  //let imagesPaths = ["./assets/canal-midi.jpg"(id = "canal_du_midi"), "./assets/basilique.jpg"(id = "basilique-st-sernin"), "./assets/capitole.jpg"(id = "capitole")];
 
+  //let imageGame = document.createElement("img");
+  // imageGame.src = imagesPaths
+  // let randomImage = Math.floor(Math.random() * imagesPaths.length);
+  // let rValue = imageGame[rand];
+  // imageAndGridContainer.appendChild(imageGame[randomImage])
 
+  let imagesPaths = ["./assets/canal-midi.jpg", "./assets/basilique.jpg", "./assets/capitole.jpg"];
+  let imageGame = document.createElement("img");
+  let randomIndex = Math.floor(Math.random() * imagesPaths.length);
+  imageGame.src = imagesPaths[randomIndex];
+  imageAndGridContainer.appendChild(imageGame);
 
 
 
