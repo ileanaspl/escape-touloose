@@ -1,0 +1,30 @@
+#prison-container {
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: 55dvh;
+  padding: var(--spacing);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
+}
+#prison-paragraphe {
+  color: white;
+  text-align: center;
+  width: clamp(300px, 50dvw, 500px);
+}
+#prison-paragraphe > span {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 900px) {
+  #prison-container {
+    align-self: center;
+
+    width: clamp(300px, 50dvw, 2000px);
+  }
+  #prison-paragraphe {
+    font-size: 1.5rem;
+  }
+}
