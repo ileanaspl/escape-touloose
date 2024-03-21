@@ -1,14 +1,25 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { apikey } from "../Services/key.js";
 import { neighborhoods } from "../main.js";
+import { endGame } from "./endGame.js";
+import { playerInfos } from "../main.js";
 
 export function welcomeInTheNeighborhood(welcomeMessage, direction, place) {
+  console.log(playerInfos);
   const welcomeContainer = createElementWithAttribute("div", { id: "welcome-container" });
   appendOrPrepend("prepend", ".dynamic-content", welcomeContainer);
 
   const welcomeParagraphe = createElementWithAttribute("p", { id: "welcome-paragraphe" });
   appendOrPrepend("append", "#welcome-container", welcomeParagraphe);
-  welcomeParagraphe.innerHTML = `Bienvenu ${welcomeMessage}, êtes vous pret à relever le défi pour vous en échapper ?`;
+  welcomeParagraphe.innerHTML =
+    direction === endGame
+      ? "Bien joué vous avez réussi à vous échapper et à atteindre le quartier de Saint-Cyprien !"
+      : `Bienvenu ${welcomeMessage}, êtes vous pret à relever le défi pour vous en échapper ?`;
+
+  const WelcomeImgContainer = createElementWithAttribute("div", {
+    id: "img-welcome-container",
+  });
+  appendOrPrepend("append", "#welcome-container", WelcomeImgContainer);
 
   const WelcomeImg = createElementWithAttribute("img", {
     id: "img-welcome",
@@ -16,13 +27,13 @@ export function welcomeInTheNeighborhood(welcomeMessage, direction, place) {
     src: neighborhoods[place].url,
   });
 
-  appendOrPrepend("append", "#welcome-container", WelcomeImg);
+  appendOrPrepend("append", "#img-welcome-container", WelcomeImg);
 
   const nextButton = createElementWithAttribute("button", {
     id: "valid-button-welcome",
     class: "valid-button",
   });
-  nextButton.innerText = "C'est parti !";
+  nextButton.innerText = direction === endGame ? "Voir le score" : "C'est parti !";
   appendOrPrepend("append", "#welcome-container", nextButton);
   nextButton.addEventListener("click", () => {
     raz();
