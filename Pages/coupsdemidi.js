@@ -7,28 +7,13 @@ export function coupsdemidi() {
   const infoBulle = document.querySelector("#info-bulle")
   const infoContainer = document.querySelector('#info-container')
 
-
-  infoBulle.addEventListener("click", ()=> {
-    dynamicContent.classList.toggle("dynamic-content-invisible");
-    dynamicContent.classList.toggle("dynamic-content-visible");
-  });
-
-  // infoContainer.addEventListener("click", (e) => {
-  //   if (e.currentTarget !== e.target) {
-  //     return;
-  //   } else {
-  //     dynamicContent.classList.toggle("dynamic-content-visible");
-  //     // dynamicContent.classList.toggle("dynamic-content-invisible");    
-  //   }
-  // });
-
   // création du container de la question (coupsdemidiContainer)
   const coupsdemidiContainer = document.createElement("div");
   coupsdemidiContainer.classList.add("coupsdemidi-container");
   dynamicContent.appendChild(coupsdemidiContainer);
 
   // ajout du titre en haut du container coupsdemidiContainer
-  const textCoupsdemidi = document.createElement("h3");
+  const textCoupsdemidi = document.createElement("h4");
   textCoupsdemidi.classList.add("textCoupsdemidi");
   coupsdemidiContainer.appendChild(textCoupsdemidi);
   textCoupsdemidi.innerHTML = "Quel est cet endroit ?";
@@ -49,11 +34,11 @@ export function coupsdemidi() {
   gridContainer.classList.add("grid-container");
   imageAndGridContainer.appendChild(gridContainer);
 
-    // tableau image du jeux
-  let imagesPaths = ["./assets/canal-midi.jpg"(id = "canal_du_midi"), "./assets/basilique.jpg"(id = "basilique-st-sernin"), "./assets/capitole.jpg"(id = "capitole")];
-  let imageGame = document.createAttribute("img");
-  imageGame.src = imagesPaths
-  imageAndGridContainer.appendChild(imageGame[])
+  // tableau image du jeux
+  // let imagesPaths = ["./assets/canal-midi.jpg"(id = "canal_du_midi"), "./assets/basilique.jpg"(id = "basilique-st-sernin"), "./assets/capitole.jpg"(id = "capitole")];
+  // let imageGame = document.createAttribute("img");
+  // imageGame.src = imagesPaths
+  // imageAndGridContainer.appendChild(imageGame[])
 
   // création de tous les carrés qui seront dans la grille
   let i;
@@ -62,17 +47,21 @@ export function coupsdemidi() {
     square.classList.add("square");
     gridContainer.appendChild(square);
   }
+
   const squares = document.querySelectorAll(".square");
 
+  // ajout de la classe square-visible à tous les carrés
   squares.forEach(square => {
     square.classList.add("square-visible")
   });
 
+  // fonction pour ajouter aléatoirement la classe square-invisible à un carré
   function makeSquareInvisible() {
     const random = Math.floor(Math.random() * squares.length)
     squares[random].classList.add("square-invisible");
   }
 
+  // méthode pour faire fonctionner la fonction makeSquareInvisible toutes les 300 millièmes de seconde
   setInterval(makeSquareInvisible, 300);
 
   const form = createElementWithAttribute("form", { class: "form-demidi" });
@@ -94,6 +83,7 @@ export function coupsdemidi() {
     name: "input-demidi",
     placeholder: " votre réponse ",
   });
+
   label.appendChild(input);
   let inputValue = "";
   input.addEventListener("change", (event) => {
