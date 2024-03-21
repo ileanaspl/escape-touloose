@@ -4,6 +4,23 @@ import { devinette } from "./devinettes.js";
 export function coupsdemidi() {
 
   const dynamicContent = document.querySelector(".dynamic-content");
+  const infoBulle = document.querySelector("#info-bulle")
+  const infoContainer = document.querySelector('#info-container')
+
+
+  infoBulle.addEventListener("click", ()=> {
+    dynamicContent.classList.toggle("dynamic-content-invisible");
+    dynamicContent.classList.toggle("dynamic-content-visible");
+  });
+
+  // infoContainer.addEventListener("click", (e) => {
+  //   if (e.currentTarget !== e.target) {
+  //     return;
+  //   } else {
+  //     dynamicContent.classList.toggle("dynamic-content-visible");
+  //     // dynamicContent.classList.toggle("dynamic-content-invisible");    
+  //   }
+  // });
 
   // création du container de la question (coupsdemidiContainer)
   const coupsdemidiContainer = document.createElement("div");
@@ -34,14 +51,24 @@ export function coupsdemidi() {
 
   // création de tous les carrés qui seront dans la grille
   let i;
-  for (i = 0; i < 15; i++) {
+  for (i = 0; i < 135; i++) {
     const square = document.createElement("div");
     square.classList.add("square");
     gridContainer.appendChild(square);
   }
 
+  const squares = document.querySelectorAll(".square");
 
+  squares.forEach(square => {
+    square.classList.add("square-visible")
+  });
 
+  function makeSquareInvisible() {
+    const random = Math.floor(Math.random() * squares.length)
+    squares[random].classList.add("square-invisible");
+  }
+
+  setInterval(makeSquareInvisible, 300);
 
   const form = createElementWithAttribute("form", { class: "form-demidi" });
   coupsdemidiContainer.appendChild(form);
@@ -71,12 +98,5 @@ export function coupsdemidi() {
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
 
 
-  // square.setAttribute("class", "square-visible");
-
-  // setInterval(() => {
-  //   for (i = 0; i < 0; i++) {
-  //     square.classList.add("square-invisible");
-  //     i++;
-  //   }
-  // }, 1000);
+ 
 }
