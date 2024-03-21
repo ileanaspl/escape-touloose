@@ -69,7 +69,7 @@ export function devinette() {
     } else {
       raz();
       if (localScore === 0) {
-        prison();
+        welcomeInTheNeighborhood("à la prison Saint-Michel", prison, 4);
       } else {
         welcomeInTheNeighborhood("dans le quartier de Saint-Cyprien", endGame, 3);
       }

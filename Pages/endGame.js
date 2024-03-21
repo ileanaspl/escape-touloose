@@ -10,7 +10,7 @@ export function endGame() {
 
   const title = createElementWithAttribute("h2", { id: "title" });
   title.innerText =
-    "Bravo vous avez terminé le quizz, nous espérons que cela vous a plu et que vous êtes prêt à relever le défi de nouveau";
+    "Bravo vous avez terminé le quizz, êtes vous prêt(e) à relever le défi de nouveau";
   appendOrPrepend("append", "#devinette-container", title);
 
   const question = createElementWithAttribute("p", { id: "question-devinette" });
@@ -23,7 +23,10 @@ export function endGame() {
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Recommencer";
   nextButton.addEventListener("click", () => {
-    playerInfos = { playerName: "", score: 0, totalTime: 0, level: 0 };
+    playerInfos.playerName = "";
+    playerInfos.score = 0;
+    playerInfos.totalTime = 0;
+    playerInfos.level = 0;
     raz();
     home();
   });
