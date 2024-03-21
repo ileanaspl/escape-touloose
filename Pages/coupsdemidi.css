@@ -72,9 +72,10 @@ main {
   padding: 20px;
 }
 
-.imageCoupsdemidi {
+.image-toulouse {
   width: 100%;
   position: relative;
+
 }
 
 .imageAndGridContainer {
@@ -84,7 +85,7 @@ main {
 }
 
 .dynamic-content-invisible {
-visibility: hidden;
+  visibility: hidden;
 }
 
 .dynamic-content-visible {
