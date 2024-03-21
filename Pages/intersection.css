@@ -1,13 +1,14 @@
 #welcome-container {
   background-color: var(--secondary-color);
   width: 100%;
-  height: 55dvh;
+  min-height: 65dvh;
   padding: var(--spacing);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   border-radius: 8px;
+  gap: 8px;
 }
 #welcome-paragraphe {
   color: white;
@@ -16,6 +17,11 @@
 }
 #valid-button-welcome {
   align-self: flex-end;
+}
+
+#img-welcome {
+  width: 100%;
+  max-width: 700px;
 }
 
 @media screen and (min-width: 900px) {

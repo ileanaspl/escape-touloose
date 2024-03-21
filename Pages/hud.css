@@ -30,12 +30,13 @@
   color: var(--font-primary-color);
   border-radius: 20px;
   width: 85dvw;
-  height: 65dvh;
+  /* height: 65dvh; */
   padding: var(--spacing);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  gap: var(--spacing-double);
 }
 
 #iframe-container {
@@ -63,11 +64,12 @@
   #infos {
     border-radius: 20px;
     width: clamp(300px, 30dvw, 500px);
-    height: 65dvh;
+    /* height: 65dvh; */
     padding: var(--spacing);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    gap: var(--spacing-double);
   }
 }

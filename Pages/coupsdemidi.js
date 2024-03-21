@@ -113,7 +113,7 @@ export function coupsdemidi() {
     }
     else { console.log("echec de la mission") }
     raz();
-    welcomeInTheNeighborhood("dans le quartier de la Daurade", devinette);
+    welcomeInTheNeighborhood("dans le quartier de la Daurade", devinette, 0);
   });
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
 
