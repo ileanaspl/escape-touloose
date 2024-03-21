@@ -40,6 +40,20 @@ export function coupsdemidi() {
     gridContainer.appendChild(square);
   }
 
+
+
+  // tableau image du jeux
+  let imagesPaths = ["./assets/canal-midi.jpg"(id = "canal_du_midi"), "./assets/basilique.jpg"(id = "basilique-st-sernin"), "./assets/capitole.jpg"(id = "capitole")];
+  let imageGame = document.createAttribute("img");
+  imageGame.src = imagesPaths
+  imageAndGridContainer.appendChild(imageGame[])
+
+
+
+
+
+
+
   const form = createElementWithAttribute("form", { class: "form-demidi" });
   coupsdemidiContainer.appendChild(form);
 
@@ -65,6 +79,11 @@ export function coupsdemidi() {
     inputValue = event.target.value;
     console.log(inputValue);
   });
+
+
+
+
+
 
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Suivant";
