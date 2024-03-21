@@ -64,7 +64,6 @@ export function coupsdemidi() {
     squares[random].classList.add("square-invisible");
   }
 
-<<<<<<< HEAD
   // méthode pour faire fonctionner la fonction makeSquareInvisible toutes les 300 millièmes de seconde et si la bonne réponse n'est pas trouvée -> case prison
   const countFunction = setInterval(() => { 
     makeSquareInvisible();
@@ -75,10 +74,6 @@ export function coupsdemidi() {
       prison();
     }
   }, 300);
-=======
-  // méthode pour faire fonctionner la fonction makeSquareInvisible toutes les 300 millièmes de seconde
-  setInterval(makeSquareInvisible, 300);
->>>>>>> bdc97cb3aef06b792311b845165e05ceb1ddc50b
 
   const form = createElementWithAttribute("form", { class: "form-demidi" });
   coupsdemidiContainer.appendChild(form);
@@ -120,9 +115,6 @@ export function coupsdemidi() {
     welcomeInTheNeighborhood("aux Carmes", devinette, 2);
   });
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
-<<<<<<< HEAD
 
   
-=======
->>>>>>> bdc97cb3aef06b792311b845165e05ceb1ddc50b
 }
