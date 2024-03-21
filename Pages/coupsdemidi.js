@@ -70,7 +70,7 @@ export function coupsdemidi() {
   nextButton.innerText = "Suivant";
   nextButton.addEventListener("click", () => {
     raz();
-    welcomeInTheNeighborhood("dans le quartier de la Daurade", devinette);
+    welcomeInTheNeighborhood("dans le quartier de la Daurade", devinette, 0);
   });
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
 
