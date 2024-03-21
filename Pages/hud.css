@@ -18,14 +18,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(159, 78, 31, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
+
 #infos {
-  background-color: rgb(125, 132, 178, 0.9);
+  background-color: var(--info-bulle-color);
+  color: var(--font-primary-color);
   border-radius: 20px;
   width: 85dvw;
   /* height: 65dvh; */
@@ -60,7 +62,6 @@
     background-color: transparent;
   }
   #infos {
-    background-color: rgb(125, 132, 178, 0.8);
     border-radius: 20px;
     width: clamp(300px, 30dvw, 500px);
     /* height: 65dvh; */
