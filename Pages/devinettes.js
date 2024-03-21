@@ -132,7 +132,7 @@ export function devinette() {
     input.value = "";
   }
   function wrongAnswer(answer) {
-    question.innerHTML = `<span> Perdu !!! </span> la bonne réponse était <span>${answer}</span>\n`;
+    question.innerHTML = `<span> Perdu !!! </span>\n`;
     input.value = "";
   }
 }
