@@ -44,7 +44,7 @@ export function quizz() {
   nextButton.innerText = "Bouton suivant";
   nextButton.addEventListener("click", () => {
     raz();
-    welcomeInTheNeighborhood("dans le quartier de la Daurade", coupsdemidi, 0);
+    welcomeInTheNeighborhood("dans le quartier de Saint-Sernin / Arnaud-Bernard", coupsdemidi, 1);
   });
 
   appendOrPrepend("append", ".dynamic-content", nextButton);

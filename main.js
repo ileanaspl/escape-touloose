@@ -10,7 +10,7 @@ export const neighborhoods = [
     url: "Assets/welcome-st-etienne.jpg",
     descriptif:
       "Dans ce quartier bourgeois, les demeures ont été réalisées principalement au  pour des aristocrates et pour des gens de robes. On y trouve aujourd'hui des magasins de luxe, des magasins d'antiquités ainsi que des ateliers de restauration. Parmi les rues remarquables, qui souvent recèlent des monuments classés, notamment la rue des Arts, la rue Ninau, la rue Théodore-Ozenne. \n La cathédrale Saint-Étienne, dont le bâtiment actuel a été construit entre le XIIIe et le XVIIe siècle a donné son nom au quartier",
-    background: "https://images.pexels.com/photos/674834/pexels-photo-674834.jpeg",
+    background: "Assets/rue-des-arts.jpg",
   },
   {
     neighborhood: "Saint-Sernin, Arnaud-Bernard",
@@ -41,8 +41,8 @@ export const neighborhoods = [
     coordonnates: "43.5864125255192,1.4481915106079462",
     url: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Prison_Saint-Michel_%28Toulouse%29.jpg",
     descriptif:
-      "La prison Saint-Michel est un bâtiment toulousain se situant au 18bis de la Grande-rue Saint-Michel sur l'ancienne route qui reliait Toulouse à Narbonne, dans le quartier Saint-Michel. Elle a été en partie inscrite monument historique par arrêté du 25 février 2011.",
-    background: "./Assets/city-toulouse.jpg",
+      "La prison Saint-Michel est un bâtiment toulousain se situant au 18bis de la Grande-rue Saint-Michel sur l'ancienne route qui reliait Toulouse à Narbonne, dans le quartier Saint-Michel. Elle a été en partie inscrite monument historique par arrêté du 25 février 2011.\nAnecdote ! Un ancien détenu, Cyprien Elix, et quatre autres détenus s'échappent de la prison dans la nuit du 2 au 3 août 1978 par un tunnel. En creusant, les détenus affirment avoir trouvé des souterrains aménagés par l'occupant allemand durant la Seconde Guerre mondiale et une fosse de cinq ou six crânes et d'ossements humains calcinés. Elix est repris quelques jours après et prévient l'administration de sa découverte. Rien ne se passe jusqu'en 2004, où Monique Dellatre-Attia, fille de Jean Dellattre, résistant disparu le 17 août 1944, apprend l'existence de cette légende et de Cyprien Elix. En 2008, elle le retrouve. Et en 2009, Cyprien Elix, malade, accepte de montrer l'emplacement du tunnel. L'ancien évadé décède en septembre 2009. Mme Dellatre-Attia par le biais du sénateur socialiste Mirassou a demandé à la chancellerie toulousaine d'ordonner une expertise de ces restes",
+    background: "./Assets/prison.jpg",
   },
 ];
 
