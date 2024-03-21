@@ -1,6 +1,7 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { devinette } from "./devinettes.js";
 import { welcomeInTheNeighborhood } from "./intersection.js";
+import { playerInfos } from "../main.js";
 
 export function coupsdemidi() {
   const dynamicContent = document.querySelector(".dynamic-content");
@@ -105,7 +106,11 @@ export function coupsdemidi() {
   const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Suivant";
   nextButton.addEventListener("click", () => {
-    if (inputValue.toLowerCase() === images[randomIndex].answerExpected) { console.log("reussi") }
+    if (inputValue.toLowerCase() === images[randomIndex].answerExpected) {
+      playerInfos.score += 2
+      console.log("reussi")
+      console.log(playerInfos)
+    }
     else { console.log("echec de la mission") }
     raz();
     welcomeInTheNeighborhood("dans le quartier de la Daurade", devinette);
