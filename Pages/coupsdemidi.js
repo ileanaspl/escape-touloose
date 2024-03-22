@@ -117,4 +117,29 @@ export function coupsdemidi() {
   });
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
 
+
+  let countToIncarcerated = 20;
+  const loader = document.querySelector(".loader");
+  loader.innerText = countToIncarcerated;
+  const timerBeforIncarcerated = setInterval(() => {
+    countToIncarcerated--;
+    loader.innerText = countToIncarcerated <= 0 || countClick === 2 ? "" : countToIncarcerated;
+    countClick === 2 && clearInterval(timerBeforIncarcerated);
+    if (countToIncarcerated === 0) {
+      question.innerText = "Perdu l'escargot ! vous avez été trop lent(e) !";
+      nextButton.classList.toggle("element-disabled");
+      input.classList.toggle("element-disabled");
+      label.classList.toggle("element-disabled");
+      nextButton.innerText = "Allez, au trou !";
+      setTimeout(() => {
+        nextButton.classList.toggle("element-disabled");
+        input.classList.toggle("element-disabled");
+        label.classList.toggle("element-disabled");
+        clearInterval(timerBeforIncarcerated);
+        raz();
+        prison();
+      }, 2000);
+    }
+  }, 1000);
+
 }
