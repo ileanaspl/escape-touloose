@@ -14,7 +14,7 @@ export function welcomeInTheNeighborhood(welcomeMessage, direction, place) {
   welcomeParagraphe.innerHTML =
     direction === endGame
       ? "Bien joué vous avez réussi à vous échapper et à atteindre le quartier de Saint-Cyprien !"
-      : `Bienvenu ${welcomeMessage}, êtes vous pret à relever le défi pour vous en échapper ?`;
+      : `Bienvenue ${welcomeMessage}, êtes vous pret à relever le défi pour vous en échapper ?`;
 
   const WelcomeImgContainer = createElementWithAttribute("div", {
     id: "img-welcome-container",
