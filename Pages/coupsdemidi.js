@@ -65,10 +65,10 @@ export function coupsdemidi() {
   }
 
   // méthode pour faire fonctionner la fonction makeSquareInvisible toutes les 300 millièmes de seconde et si la bonne réponse n'est pas trouvée -> case prison
-  const countFunction = setInterval(() => { 
+  const countFunction = setInterval(() => {
     makeSquareInvisible();
     const invisibleSquares = document.querySelectorAll(".square-invisible");
-    if (invisibleSquares.length === squares.length) { 
+    if (invisibleSquares.length === squares.length) {
       clearInterval(countFunction);
       raz();
       prison();

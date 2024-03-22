@@ -1,9 +1,4 @@
-h2 {
-    text-align: center;
-
-}
-
-h3 {
+.interrogation {
     text-align: center;
     background-color: var(--secondary-color);
     border-radius: 20px;
@@ -13,7 +8,8 @@ h3 {
     justify-content: space-around;
     align-items: center;
     color: white;
-    margin-bottom: 32px;
+    margin-block: 24px;
+
 }
 
 
@@ -32,7 +28,11 @@ h3 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 24px;
+    margin: 16px;
     max-width: 250px;
     min-width: 250px;
+}
+
+.loader.inactive {
+    display: none;
 }
