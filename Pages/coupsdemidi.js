@@ -29,7 +29,7 @@ export function coupsdemidi() {
   // creation de la fonction des images au hasard
   let images = [
     { path: "./Assets/canal-midi.jpg", answerExpected: "canal du midi" },
-    { path: "./Assets/basilique.jpg", answerExpected: "st-sernin" },
+    { path: "./Assets/basilique.jpg", answerExpected: "saint sernin" },
     { path: "./Assets/capitole.jpg", answerExpected: "capitole" },
   ];
   let imageGame = document.createElement("img");
@@ -132,7 +132,7 @@ export function coupsdemidi() {
     countClick > 0 && clearInterval(timerBeforIncarcerated);
     if (countToIncarcerated === 0) {
       textCoupsdemidi.innerHTML =
-        "Perdu l'escargot !!! Vous avez été trop lent(e), allez, au trou !";
+        "Perdu l'escargot !!! Vous avez été trop lent(e). Allez, au trou !";
       imageAndGridContainer.remove();
       form.remove();
       nextButton.remove();
