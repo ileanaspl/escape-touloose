@@ -1,10 +1,11 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
+import { welcomeInTheNeighborhood } from "./intersection.js";
 import { coupsdemidi } from "./coupsdemidi.js";
 import { playerInfos } from "../main.js";
 import { prison } from "./prison.js";
 
 export function quizz() {
-
+    playerInfos.level++;
     const questions = [
         {
             question: "Quelle bâtiment crée en 1190 est devenu un lieu emblématique de Toulouse ? ",
@@ -22,6 +23,13 @@ export function quizz() {
             reponse: "721"
         }
     ];
+
+
+    const title = createElementWithAttribute("h2", { id: "title" });
+    title.innerText = "Quizz page";
+    appendOrPrepend("append", ".dynamic-content", title);
+
+
 
     const quizzContainer = createElementWithAttribute("div", { class: "quizz-container" });
 
@@ -57,11 +65,8 @@ export function quizz() {
             optionElement.addEventListener('click', () => repondre(index));
             choixRéponse.appendChild(optionElement);
         });
-
         timeout()
-
     }
-
     const timerElement = document.querySelector(".loader");
 
     let isAnswered = false
@@ -70,8 +75,6 @@ export function quizz() {
     function repondre(selectedIndex) {
         const question = questions[currentQuestionIndex];
         const choice = question.options[selectedIndex];
-
-
 
         if (choice === question.reponse) {
             score++
@@ -89,9 +92,8 @@ export function quizz() {
         currentQuestionIndex++;
         console.log(currentQuestionIndex);
         // Effacer les options précédentes
-        interrogation.innerText = '';
+        interrogation.innerText = "";
         choixRéponse.innerHTML = "";
-
 
         // Passer à la prochaine question ou afficher le score final    
         if (currentQuestionIndex < questions.length) {
@@ -137,6 +139,7 @@ export function quizz() {
     nextButton.addEventListener("click", () => {
         raz();
         coupsdemidi();
+        welcomeInTheNeighborhood("dans le quartier de Saint-Sernin, Arnaud-Bernard", coupsdemidi, 1);
     });
 
     appendOrPrepend("append", ".dynamic-content", nextButton);
