@@ -10,7 +10,7 @@ export function home() {
     const headerHome = document.querySelector("header");
     headerHome.setAttribute("class", "header-invisible");
 
-    const title = createElementWithAttribute("h2", { id: "title" });
+    const title = createElementWithAttribute("h2", { class: "title" });
     title.innerText = "Escape Touloose";
     appendOrPrepend("prepend", ".dynamic-content", title);
 
@@ -59,34 +59,20 @@ export function home() {
             alert("Veuillez entrer votre nom.");
             return
         } else {
-          header.innerText += playerName;
-          playerInfos.playerName = playerName;
+          const titleHeader = document.querySelector('h1')
+          headerHome.classList.remove("header-invisible");  
+          titleHeader.innerText += ` ${playerName}`;
+
           raz();
           welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
         }
     });
 
-      /*  const nameInputSection = document.querySelector(".name-input-section");
-        if (nameInputSection) {
-            nameInputSection.remove();
-        } */
-
-        const header = document.querySelector("header");
-        header.classList.remove("header-invisible");
 
 
-        /* const footerHome = document.querySelector("footer");
-        footerHome.classList.remove("footer-invisible"); */
+     
 
-  /* const nextButton = createElementWithAttribute("button", { id: "next-button" });
-  nextButton.innerText = "Bouton suivant";
-  nextButton.addEventListener("click", () => {
-    header.innerText += playerName.value;
-    playerInfos.playerName = playerName.value;
-    raz();
-    welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
-  });
-  appendOrPrepend("append", ".dynamic-content", nextButton); */
+
   
 }
 
