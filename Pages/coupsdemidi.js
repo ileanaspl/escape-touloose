@@ -44,8 +44,8 @@ export function coupsdemidi() {
   imageAndGridContainer.appendChild(gridContainer);
 
   // création de tous les carrés qui seront dans la grille
-  let i;
-  for (i = 0; i < 32; i++) {
+
+  for (let i = 0; i < 32; i++) {
     const square = document.createElement("div");
     square.classList.add("square");
     gridContainer.appendChild(square);
@@ -59,21 +59,6 @@ export function coupsdemidi() {
   });
 
   // fonction pour ajouter aléatoirement la classe square-invisible à un carré
-  function makeSquareInvisible() {
-    const random = Math.floor(Math.random() * squares.length);
-    squares[random].classList.add("square-invisible");
-  }
-
-  // méthode pour faire fonctionner la fonction makeSquareInvisible toutes les 300 millièmes de seconde et si la bonne réponse n'est pas trouvée -> case prison
-  const countFunction = setInterval(() => {
-    makeSquareInvisible();
-    const invisibleSquares = document.querySelectorAll(".square-invisible");
-    if (invisibleSquares.length === squares.length) {
-      clearInterval(countFunction);
-      raz();
-      prison();
-    }
-  }, 300);
 
   const form = createElementWithAttribute("form", { class: "form-demidi" });
   coupsdemidiContainer.appendChild(form);
@@ -101,43 +86,80 @@ export function coupsdemidi() {
     inputValue = input.value;
   });
 
-  const nextButton = createElementWithAttribute("button", { id: "next-button" });
+  let countClick = 0;
+  const nextButton = createElementWithAttribute("button", {
+    id: "next-button",
+    class: "valid-button",
+  });
   nextButton.innerText = "Suivant";
   nextButton.addEventListener("click", () => {
+    countClick += 1;
     if (inputValue.toLowerCase() === images[randomIndex].answerExpected) {
+      clearInterval(countFunction);
+      clearInterval(timerBeforIncarcerated);
       playerInfos.score += 2;
-      console.log("reussi");
-      console.log(playerInfos);
+      textCoupsdemidi.innerHTML =
+        "Bravo !!! Vous avez trouvé la bonne réponse direction le prochain quartier";
+      imageAndGridContainer.remove();
+      form.remove();
+      nextButton.remove();
+      setTimeout(() => {
+        raz();
+        welcomeInTheNeighborhood("aux Carmes", devinette, 2);
+      }, 2000);
     } else {
-      console.log("echec de la mission");
+      clearInterval(countFunction);
+      clearInterval(timerBeforIncarcerated);
+      textCoupsdemidi.innerHTML = "Perdu !!! Allez, au trou !";
+      imageAndGridContainer.remove();
+      form.remove();
+      nextButton.remove();
+      setTimeout(() => {
+        raz();
+        welcomeInTheNeighborhood("à la prison Saint-Michel", prison, 4);
+      }, 2000);
     }
-    raz();
-    welcomeInTheNeighborhood("aux Carmes", devinette, 2);
   });
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
 
-  let countClick = 0;
   let countToIncarcerated = 20;
   const loader = document.querySelector(".loader");
   loader.innerText = countToIncarcerated;
   const timerBeforIncarcerated = setInterval(() => {
     countToIncarcerated--;
-    loader.innerText = countToIncarcerated <= 0 || countClick === 2 ? "" : countToIncarcerated;
-    countClick === 2 && clearInterval(timerBeforIncarcerated);
+    console.log(countToIncarcerated);
+    loader.innerText = countToIncarcerated <= 0 || countClick === 1 ? "" : countToIncarcerated;
+    countClick > 0 && clearInterval(timerBeforIncarcerated);
     if (countToIncarcerated === 0) {
-      question.innerText = "Perdu l'escargot ! vous avez été trop lent(e) !";
-      nextButton.classList.toggle("element-disabled");
-      input.classList.toggle("element-disabled");
-      label.classList.toggle("element-disabled");
-      nextButton.innerText = "Allez, au trou !";
+      textCoupsdemidi.innerHTML =
+        "Perdu l'escargot !!! Vous avez été trop lent(e), allez, au trou !";
+      imageAndGridContainer.remove();
+      form.remove();
+      nextButton.remove();
       setTimeout(() => {
-        nextButton.classList.toggle("element-disabled");
-        input.classList.toggle("element-disabled");
-        label.classList.toggle("element-disabled");
         clearInterval(timerBeforIncarcerated);
+        clearInterval(countFunction);
         raz();
-        prison();
+        welcomeInTheNeighborhood("à la prison Saint-Michel", prison, 4);
       }, 2000);
     }
   }, 1000);
+
+  // méthode pour faire fonctionner la fonction makeSquareInvisible toutes les 300 millièmes de seconde et si la bonne réponse n'est pas trouvée -> case prison
+  const countFunction = setInterval(() => {
+    makeSquareInvisible();
+    const invisibleSquares = document.querySelectorAll(".square-invisible");
+    if (invisibleSquares.length === squares.length) {
+      clearInterval(countFunction);
+      clearInterval(timerBeforIncarcerated);
+      raz();
+      prison();
+    }
+  }, 500);
+
+  ////déclaration des fonctions locales
+  function makeSquareInvisible() {
+    const random = Math.floor(Math.random() * squares.length);
+    squares[random].classList.add("square-invisible");
+  }
 }
