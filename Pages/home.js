@@ -23,7 +23,7 @@ export function home() {
     homeContainer.appendChild(rdj);
 
     const paragraphrdj = createElementWithAttribute("p", { id: "paragraphrdj" });
-    paragraphrdj.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis condimentum justo, vel bibendum massa. Quisque ultricies felis id ornare egestas. Pellentesque tempus sed justo at vehicula. Praesent a lectus in nunc aliquet scelerisque at vestibulum nisi.";
+    paragraphrdj.innerText = "Vous voici sur un escape game sur le thème de la ville de Toulouse, le score dépends de plusieurs critères : le nombre de bonnes réponses, la rapidité des réponses. Attention aux mauvaises réponses. Bon courage ! ";
     homeContainer.appendChild(paragraphrdj);
 
     const myleneImage = document.createElement("img");
@@ -59,21 +59,15 @@ export function home() {
             alert("Veuillez entrer votre nom.");
             return
         } else {
-          const titleHeader = document.querySelector('h1')
+          const title = document.querySelector('h1')
           headerHome.classList.remove("header-invisible");  
-          titleHeader.innerText += ` ${playerName}`;
+          title.innerText += ` ${playerName}`;
 
           raz();
           welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
         }
     });
 
-
-
-     
-
-
-  
 }
 
 
