@@ -25,7 +25,7 @@ export function home() {
     homeContainer.appendChild(rdj);
 
     const paragraphrdj = createElementWithAttribute("p", { id: "paragraphrdj" });
-    paragraphrdj.innerText = "Vous voici sur un escape game sur le thème de la ville de Toulouse, le score dépends de plusieurs critères : le nombre de bonnes réponses, la rapidité des réponses. Attention aux mauvaises réponses. Bon courage ! ";
+    paragraphrdj.innerText = "Vous voici sur un escape game sur le thème de la ville de Toulouse, le score dépend de plusieurs critères : le nombre de bonnes réponses, la rapidité des réponses. Attention aux mauvaises réponses. Bon courage ! ";
     homeContainer.appendChild(paragraphrdj);
 
     const myleneImage = document.createElement("img");

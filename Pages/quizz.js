@@ -8,10 +8,10 @@ export function quizz() {
     playerInfos.level++;
     const questions = [
         {
-            question: "Quelle bâtiment crée en 1190 est devenu un lieu emblématique de Toulouse ? ",
+            question: "Quel bâtiment crée en 1190 est devenu un lieu emblématique de Toulouse ? ",
             options: [
                 "Le palais Niel",
-                "La basilique saint sernin",
+                "La basilique Saint-Sernin",
                 "Le Capitole",
                 "Le couvent des Jacobins",
             ],
@@ -24,9 +24,9 @@ export function quizz() {
                 "L’élevage / Vente de canard",
                 "L’automobile",
                 "Le Tourisme",
-                "L’aerospatial / Aeronautique",
+                "L’aerospatial / Aéronautique",
             ],
-            reponse: "L’aerospatial / Aeronautique",
+            reponse: "L’aerospatial / Aéronautique",
         },
         {
             question: "En quelle année la bataille de Toulouse a été gagnée ?",
@@ -110,7 +110,7 @@ export function quizz() {
         } else {
             interrogation.innerText = "";
             choixRéponse.innerHTML = "";
-            interrogation.innerText = 'Dommage ! avez vous pensé à ouvrir wikipédia ?! \n Direction le trou ! '
+            interrogation.innerText = 'Dommage ! avez-vous pensé à ouvrir wikipédia ?! \n Direction le trou ! '
             setTimeout(() => {
                 raz()
                 welcomeInTheNeighborhood("à la prison Saint-Michel", prison, 4);

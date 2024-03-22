@@ -45,7 +45,7 @@ export function devinette() {
     countClick++;
     if (countClick === 1) {
       findAnswerNumber(questions[0]["devinettesReponse"]);
-      question.innerHTML += " Préparez vous à la prochaine question !";
+      question.innerHTML += " Préparez-vous à la prochaine question !";
       setTimeout(() => {
         question.innerText = showQuestion(questions[1]["devinettesQuestion"]);
         nextButton.classList.toggle("element-disabled");
