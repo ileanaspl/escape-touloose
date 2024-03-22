@@ -35,9 +35,6 @@ export function quizz() {
         },
     ];
 
-    const title = createElementWithAttribute("h2", { id: "title" });
-    title.innerText = "Quizz page";
-    appendOrPrepend("append", ".dynamic-content", title);
 
 
     const quizzContainer = createElementWithAttribute("div", { class: "quizz-container" });
