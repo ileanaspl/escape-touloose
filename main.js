@@ -46,13 +46,17 @@ export const neighborhoods = [
   },
 ];
 
-export const playerInfos = { playerName: "", score: 0, totalTime: 0, level: 0 };
-const globalTimer = setInterval(() => {
-  playerInfos.totalTime++;
-  if (playerInfos.level >= 3) {
-    clearInterval(globalTimer);
-  }
-}, 1000);
+const initialDate = new Date(Date.now());
+
+export const dateDifferenceInSeconds = (dateInitial, dateFinal) => (dateFinal - dateInitial) / 1000;
+export const playerInfos = { playerName: "", score: 0, start: initialDate, level: 0 };
+
+// const globalTimer = setInterval(() => {
+//   playerInfos.totalTime++;
+//   if (playerInfos.level >= 3) {
+//     clearInterval(globalTimer);
+//   }
+// }, 1000);
 
 export const questions = [
   {
