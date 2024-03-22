@@ -9,21 +9,35 @@ export function quizz() {
     const questions = [
         {
             question: "Quelle bâtiment crée en 1190 est devenu un lieu emblématique de Toulouse ? ",
-            options: ["Le palais Niel", "La basilique saint sernin", "Le Capitole", "Le couvent des Jacobins"],
-            reponse: "Le Capitole"
+            options: [
+                "Le palais Niel",
+                "La basilique saint sernin",
+                "Le Capitole",
+                "Le couvent des Jacobins",
+            ],
+            reponse: "Le Capitole",
         },
         {
-            question: "Quel est le secteur d’activité qui rapporte le plus économiquement à la ville de Toulouse ?",
-            options: ["L’élevage / Vente de canard", "L’automobile", "Le Tourisme", "L’aerospatial / Aeronautique"],
-            reponse: "L’aerospatial / Aeronautique"
+            question:
+                "Quel est le secteur d’activité qui rapporte le plus économiquement à la ville de Toulouse ?",
+            options: [
+                "L’élevage / Vente de canard",
+                "L’automobile",
+                "Le Tourisme",
+                "L’aerospatial / Aeronautique",
+            ],
+            reponse: "L’aerospatial / Aeronautique",
         },
         {
             question: "En quelle année la bataille de Toulouse a été gagnée ?",
             options: ["720", "721", "722", "723"],
-            reponse: "721"
-        }
+            reponse: "721",
+        },
     ];
 
+    const title = createElementWithAttribute("h2", { id: "title" });
+    title.innerText = "Quizz page";
+    appendOrPrepend("append", ".dynamic-content", title);
 
 
     const quizzContainer = createElementWithAttribute("div", { class: "quizz-container" });

@@ -9,7 +9,6 @@
   top: 0;
   left: 0;
   border: solid 3px white;
-
 }
 
 .square {
@@ -31,26 +30,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 90%;
   position: relative;
-}
-
-#next-button {
-
-  border: none;
-  text-decoration: none;
-  color: var(--font-primary-color);
-  background-color: var(--third-color);
-  margin-top: 8px;
-  padding: 12px 24px;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 0.75rem;
+  color: white;
+  min-height: 50%;
 }
 
 .hint {
-
-  color: var(--font-primary-color)
+  color: var(--font-primary-color);
 }
 
 main {
@@ -59,7 +47,6 @@ main {
 }
 
 .form-demidi {
-
   margin: 1rem;
 }
 
@@ -75,7 +62,6 @@ main {
 .image-toulouse {
   width: 100%;
   position: relative;
-
 }
 
 .imageAndGridContainer {
@@ -89,5 +75,5 @@ main {
 }
 
 .dynamic-content-visible {
-visibility: visible;
+  visibility: visible;
 }
