@@ -121,23 +121,4 @@ export function quizz() {
 
     }
 
-    // Lancer le quiz
-    function timeout() {
-        let departSeconde = 20
-
-        timerElement.innerText = departSeconde
-
-        const interval = setInterval(() => {
-
-            departSeconde--
-            timerElement.innerText = departSeconde
-            // console.log(departSeconde)
-
-            if (departSeconde === 0 || isAnswered === true) {
-                clearInterval(interval)
-            }
-
-        }, 1000)
-    }
-
 }
