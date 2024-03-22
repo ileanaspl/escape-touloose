@@ -1,8 +1,11 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { prison } from "./prison.js";
 import { questions, playerInfos } from "../main.js";
+import { endGame } from "./endGame.js";
+import { welcomeInTheNeighborhood } from "./intersection.js";
 
 export function devinette() {
+  playerInfos.level++;
   const devinetteContainer = createElementWithAttribute("div", { id: "devinette-container" });
   appendOrPrepend("prepend", ".dynamic-content", devinetteContainer);
 
@@ -23,10 +26,6 @@ export function devinette() {
 
   const input = createElementWithAttribute("input", { id: "input-devinette", type: "text" });
   appendOrPrepend("append", "#form-devinette", input);
-
-  const title = createElementWithAttribute("h2", { id: "title" });
-  title.innerText = "Devinette !";
-  appendOrPrepend("append", ".dynamic-content", title);
 
   const nextButton = createElementWithAttribute("button", {
     id: "valid-button-devinette",
@@ -70,12 +69,38 @@ export function devinette() {
     } else {
       raz();
       if (localScore === 0) {
-        prison();
+        welcomeInTheNeighborhood("à la prison Saint-Michel", prison, 4);
       } else {
-        alert("il faut faire la endpage là non ?");
+        welcomeInTheNeighborhood("dans le quartier de Saint-Cyprien", endGame, 3);
       }
     }
   });
+
+  //systeme de compteur avec échappement en fonction du temps écoulé ou du score obtenu
+  let countToIncarcerated = 20;
+  const loader = document.querySelector(".loader");
+  loader.innerText = countToIncarcerated;
+
+  const timerBeforIncarcerated = setInterval(() => {
+    countToIncarcerated--;
+    loader.innerText = countToIncarcerated <= 0 || countClick === 2 ? "" : countToIncarcerated;
+    countClick === 2 && clearInterval(timerBeforIncarcerated);
+    if (countToIncarcerated === 0) {
+      question.innerText = "Perdu l'escargot ! vous avez été trop lent(e) !";
+      nextButton.classList.toggle("element-disabled");
+      input.classList.toggle("element-disabled");
+      label.classList.toggle("element-disabled");
+      nextButton.innerText = "Allez, au trou !";
+      setTimeout(() => {
+        nextButton.classList.toggle("element-disabled");
+        input.classList.toggle("element-disabled");
+        label.classList.toggle("element-disabled");
+        clearInterval(timerBeforIncarcerated);
+        raz();
+        prison();
+      }, 2000);
+    }
+  }, 1000);
 
   ///////////////déclaration de fonctions locales/////////////////
   function showQuestion(question) {
@@ -108,7 +133,7 @@ export function devinette() {
     input.value = "";
   }
   function wrongAnswer(answer) {
-    question.innerHTML = `<span> Perdu !!! </span> la bonne réponse était <span>${answer}</span>\n`;
+    question.innerHTML = `<span> Perdu !!! </span>\n`;
     input.value = "";
   }
 }

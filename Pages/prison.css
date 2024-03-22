@@ -1,45 +1,31 @@
-#welcome-container {
+#prison-container {
   background-color: var(--secondary-color);
   width: 100%;
-  min-height: 65dvh;
+  height: 55dvh;
   padding: var(--spacing);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   border-radius: 8px;
-  gap: 8px;
   color: white;
 }
-#welcome-paragraphe {
+#prison-paragraphe {
   color: white;
   text-align: center;
   width: clamp(300px, 50dvw, 500px);
 }
-#valid-button-welcome {
-  align-self: flex-end;
-}
-
-#img-welcome-container {
-  position: relative;
-  max-height: 70%;
-}
-
-#img-welcome {
-  object-fit: contain;
-  height: 100%;
-  width: 100%;
+#prison-paragraphe > span {
+  font-weight: bold;
 }
 
 @media screen and (min-width: 900px) {
-  #welcome-container {
+  #prison-container {
     align-self: center;
+
     width: clamp(300px, 50dvw, 2000px);
   }
-  #welcome-paragraphe {
+  #prison-paragraphe {
     font-size: 1.5rem;
-  }
-  #valid-button-welcome {
-    align-self: center;
   }
 }

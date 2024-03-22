@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(15, 1fr);
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -72,9 +72,10 @@ main {
   padding: 20px;
 }
 
-.imageCoupsdemidi {
+.image-toulouse {
   width: 100%;
   position: relative;
+
 }
 
 .imageAndGridContainer {
@@ -84,16 +85,9 @@ main {
 }
 
 .dynamic-content-invisible {
-visibility: hidden;
+  visibility: hidden;
 }
 
 .dynamic-content-visible {
 visibility: visible;
-}
-
-@media screen and (min-width: 900px) {
-  .dynamic-content-visible .dynamic-content-invisible {
-  visibility: visible;
-  } 
-
 }

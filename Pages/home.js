@@ -1,29 +1,18 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { quizz } from "./quizz.js";
 import { playerInfos } from "../main.js";
+import { welcomeInTheNeighborhood } from "./intersection.js";
 
 export function home() {
 
     const dynamicContent = document.querySelector(".dynamic-content");
-    const header = document.querySelector("header");
-    header.setAttribute("class", "header-invisible");
+
+    const headerHome = document.querySelector("header");
+    headerHome.setAttribute("class", "header-invisible");
 
     const title = createElementWithAttribute("h2", { id: "title" });
     title.innerText = "Escape Touloose";
     appendOrPrepend("prepend", ".dynamic-content", title);
-
-    const nameInputSection = document.createElement("div");
-    nameInputSection.classList.add("name-input-section");
-
-    const nameLabel = createElementWithAttribute("label", { for: "name-input" });
-    nameLabel.innerText = "Entrez votre nom : ";
-
-    const nameInput = createElementWithAttribute("input", { type: "text", id: "name-input", placeholder: "Votre nom" });
-
-    nameInputSection.appendChild(nameLabel);
-    nameInputSection.appendChild(nameInput);
-
-    dynamicContent.appendChild(nameInputSection);
 
     const homeContainer = document.createElement("div");
     homeContainer.classList.add("home-container");
@@ -43,45 +32,52 @@ export function home() {
     myleneImage.id = "mylene-avatar";
     dynamicContent.appendChild(myleneImage);
 
-    const footer = document.querySelector("footer");
+    const nameInputSection = document.createElement("div");
+    nameInputSection.classList.add("name-input-section");
+    dynamicContent.appendChild(nameInputSection);
+
+    const nameLabel = createElementWithAttribute("label", { id: "name-input" });
+    nameLabel.innerText = "Entrez votre nom : ";
+    nameInputSection.appendChild(nameLabel);
+
+    const nameInput = createElementWithAttribute("input", { type: "text", id: "name-input", placeholder: "Votre nom" });
+    nameInputSection.appendChild(nameInput);
+    dynamicContent.appendChild(nameInputSection);
+
+    const footerHome = document.querySelector("footer");
     footer.setAttribute("class", "footer-invisible");
 
-    const nextButton = createElementWithAttribute("button", { id: "next-button", class: "valid-button" });
+    /* const nextButton = createElementWithAttribute("button", { id: "next-button", class: "valid-button" });
     nextButton.innerText = "C'est parti!";
     nextButton.addEventListener("click", () => {
         const playerName = document.getElementById("name-input").value.trim();
         if (playerName === "") {
             alert("Veuillez entrer votre nom.");
-            return;
+            return    
         }
+    }); */
 
-        const myleneImage = document.getElementById("mylene-avatar");
-        if (myleneImage) {
-            myleneImage.remove();
-        }
-
-        const paragraphrdj = document.getElementById("paragraphrdj");
-        if (paragraphrdj) {
-            paragraphrdj.remove();
-        }
-
-        const nameInputSection = document.querySelector(".name-input-section");
+      /*  const nameInputSection = document.querySelector(".name-input-section");
         if (nameInputSection) {
             nameInputSection.remove();
-        }
+        } */
 
         const header = document.querySelector("header");
         header.classList.remove("header-invisible");
 
 
-        const footer = document.querySelector("footer");
-        footer.classList.remove("footer-invisible");
+        /* const footerHome = document.querySelector("footer");
+        footerHome.classList.remove("footer-invisible"); */
 
-        raz();
-        quizz();
-    });
-
-    appendOrPrepend("append", ".dynamic-content", nextButton);
+  const nextButton = createElementWithAttribute("button", { id: "next-button" });
+  nextButton.innerText = "Bouton suivant";
+  nextButton.addEventListener("click", () => {
+    header.innerText += playerName.value;
+    playerInfos.playerName = playerName.value;
+    raz();
+    welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
+  });
+  appendOrPrepend("append", ".dynamic-content", nextButton); 
 }
 
 

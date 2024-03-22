@@ -22,11 +22,14 @@
 
 body {
   background-image: url(Assets/city-toulouse.jpg);
-
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .avatar {
@@ -39,7 +42,7 @@ body {
 }
 
 .avatar-contener {
-  height: clamp(40px, 6dvw, 70px);
+  height: clamp(50px, 8dvw, 90px);
 }
 
 h1 {
@@ -50,6 +53,9 @@ h1 {
   font-size: clamp(18px, 3vw, 30px);
   display: flex;
   align-items: center;
+
+  width: fit-content;
+  justify-content: center;
 }
 
 h2 {
@@ -58,8 +64,6 @@ h2 {
 
 header {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   justify-content: space-evenly;
   align-items: center;
   height: 12dvh;
@@ -86,20 +90,23 @@ main {
 }
 
 footer {
-  height: 10dvh;
+  height: 5dvh;
   display: flex;
   justify-content: center;
 }
-
-.loader {
-  display: inline-flex;
-  border: 20px solid var(--third-color);
-
-  border-radius: 50%;
-  background-color: var(--third-color);
-  background-color: var(--third-color);
+.scoring {
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background: linear-gradient(145deg, #5e5ce5, #4f4dc1);
+}
+.loader {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*.loader::before,
@@ -152,5 +159,14 @@ footer {
 
   .dynamic-content {
     width: clamp(500px, 80dvw, 2000px);
+  }
+  .scoring {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #5e5ce5, #4f4dc1);
+  }
+  h1 {
+    width: 90%;
   }
 }
