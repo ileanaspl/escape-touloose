@@ -80,6 +80,7 @@ export function devinette() {
   let countToIncarcerated = 20;
   const loader = document.querySelector(".loader");
   loader.innerText = countToIncarcerated;
+
   const timerBeforIncarcerated = setInterval(() => {
     countToIncarcerated--;
     loader.innerText = countToIncarcerated <= 0 || countClick === 2 ? "" : countToIncarcerated;

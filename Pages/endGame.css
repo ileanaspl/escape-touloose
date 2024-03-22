@@ -1,4 +1,4 @@
-#prison-container {
+#endgame-container {
   background-color: var(--secondary-color);
   width: 100%;
   height: 55dvh;
@@ -10,12 +10,12 @@
   border-radius: 8px;
   color: white;
 }
-#prison-paragraphe {
+#endgame-paragraphe {
   color: white;
   text-align: center;
   width: clamp(300px, 50dvw, 500px);
 }
-#prison-paragraphe > span {
+#endgame-paragraphe > span {
   font-weight: bold;
 }
 

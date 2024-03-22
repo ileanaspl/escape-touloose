@@ -23,7 +23,7 @@ export const neighborhoods = [
   {
     neighborhood: "Les Carmes",
     coordonnates: "43.597775367471534,1.4445854701362337",
-    url: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Carmes-panorama_01.JPG",
+    url: "./Assets/welcome-carmes.jpg",
     descriptif:
       "Vieux quartier toulousain, traversé par le cardo romain (l'axe nord-sud), les Carmes s'organisent autour d'une ancienne halle dont la construction a été décidée par les capitouls en 1203. La rue des Filatiers est une des rues les plus importantes du quartier. C'est dans cette rue notamment que l'on retrouve un des hauts lieux de l'histoire judiciaire toulousaine, la maison de Jean Calas. Le quartier est connu pour être animé. De nombreux restaurants et bars y sont implantés ainsi que le Marché des Carmes et son parking payant de 520 places.",
     background: "./Assets/carmes.jpg",
@@ -39,21 +39,16 @@ export const neighborhoods = [
   {
     neighborhood: "Prison Saint-Michel",
     coordonnates: "43.5864125255192,1.4481915106079462",
-    url: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Prison_Saint-Michel_%28Toulouse%29.jpg",
+    url: "./Assets/welcome-saint-michel.jpg",
     descriptif:
       "La prison Saint-Michel est un bâtiment toulousain se situant au 18bis de la Grande-rue Saint-Michel sur l'ancienne route qui reliait Toulouse à Narbonne, dans le quartier Saint-Michel. Elle a été désaffectée en 2009 et est partiellement inscrite monument historique par arrêté du 25 février 2011.",
     background: "./Assets/background-prison.jpg",
   },
 ];
 
-export const playerInfos = { playerName: "", score: 0, totalTime: 0, level: 0 };
-const globalTimer = setInterval(() => {
-  playerInfos.totalTime++;
-  if (playerInfos.level >= 3) {
-    clearInterval(globalTimer);
-  }
-}, 1000);
-
+const initialDate = new Date(Date.now());
+export const dateDifferenceInSeconds = (dateInitial, dateFinal) => (dateFinal - dateInitial) / 1000;
+export const playerInfos = { playerName: "", score: 0, start: initialDate, level: 0 };
 export const questions = [
   {
     level: "normal",
