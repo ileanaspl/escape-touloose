@@ -5,6 +5,8 @@ import { welcomeInTheNeighborhood } from "./intersection.js";
 
 export function home() {
 
+    document.body.style.backgroundImage = "url(Assets/city-toulouse.jpg)"
+
     const dynamicContent = document.querySelector(".dynamic-content");
 
     const headerHome = document.querySelector("header");
@@ -65,15 +67,9 @@ export function home() {
 
           raz();
           welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
+          footerHome.classList.remove("footer-invisible");
         }
     });
-
-
-
-     
-
-
-  
 }
 
 
