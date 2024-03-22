@@ -138,7 +138,6 @@ export function quizz() {
     nextButton.innerText = "Bouton suivant";
     nextButton.addEventListener("click", () => {
         raz();
-        coupsdemidi();
         welcomeInTheNeighborhood("dans le quartier de Saint-Sernin, Arnaud-Bernard", coupsdemidi, 1);
     });
 
