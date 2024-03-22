@@ -1,5 +1,5 @@
 import { createElementWithAttribute, appendOrPrepend } from "../Services/util.js";
-import { apikey } from "../Services/key.js";
+import { apikey } from "../key.js";
 
 export function hud() {
   const infoBulle = document.querySelector("#info-bulle");

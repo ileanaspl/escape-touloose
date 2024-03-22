@@ -1,5 +1,5 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
-import { apikey } from "../Services/key.js";
+import { apikey } from "../key.js";
 import { neighborhoods } from "../main.js";
 import { endGame } from "./endGame.js";
 import { playerInfos } from "../main.js";
