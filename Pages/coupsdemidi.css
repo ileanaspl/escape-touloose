@@ -1,15 +1,18 @@
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  width: 350px;
-  border-radius: 5px;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  width: 100%;
+  height: 100%;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid 3px white;
+
 }
 
 .square {
-  width: 70px;
-  height: 70px;
   background-color: #1e2133;
 }
 
@@ -22,26 +25,32 @@
 }
 
 .coupsdemidi-container {
-  background-color: rgb(125, 132, 178, 0.8);
-  ;
+  background-color: rgb(125, 132, 178, 0.7);
   padding: var(--spacing);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90%;
+  position: relative;
 }
 
 #next-button {
 
   border: none;
   text-decoration: none;
-  color: white;
+  color: var(--font-primary-color);
   background-color: var(--third-color);
   margin-top: 8px;
   padding: 12px 24px;
   border-radius: 20px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 0.75rem;
+}
+
+.hint {
+
+  color: var(--font-primary-color)
 }
 
 main {
@@ -49,6 +58,42 @@ main {
   justify-content: space-between;
 }
 
+.form-demidi {
+
+  margin: 1rem;
+}
+
 .dynamic-content {
   align-items: center;
+}
+
+.textCoupsdemidi {
+  color: var(--font-primary-color);
+  padding: 20px;
+}
+
+.imageCoupsdemidi {
+  width: 100%;
+  position: relative;
+}
+
+.imageAndGridContainer {
+  position: relative;
+  width: 100%;
+  max-width: 472px;
+}
+
+.dynamic-content-invisible {
+visibility: hidden;
+}
+
+.dynamic-content-visible {
+visibility: visible;
+}
+
+@media screen and (min-width: 900px) {
+  .dynamic-content-visible .dynamic-content-invisible {
+  visibility: visible;
+  } 
+
 }
