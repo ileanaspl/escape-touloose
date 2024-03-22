@@ -45,19 +45,22 @@ export function home() {
     dynamicContent.appendChild(nameInputSection);
 
     const footerHome = document.querySelector("footer");
+    console.log(footerHome);
     footerHome.setAttribute("class", "footer-invisible");
 
     const nextButton = createElementWithAttribute("button", { id: "next-button", class: "valid-button" });
     nameInputSection.appendChild(nextButton);
     nextButton.innerText = "C'est parti!";
+
     nextButton.addEventListener("click", () => {
-        const playerName = document.querySelector(".valid-button").value.trim();
-        if (playerName === "") {
+      const playerName = nextButton.previousElementSibling.value.trim();
+      console.log(nextButton.previousElementSibling.value);
+      if (playerName === "") {
             alert("Veuillez entrer votre nom.");
             return
         } else {
-          header.innerText += playerName.value;
-          playerInfos.playerName = playerName.value;
+          header.innerText += playerName;
+          playerInfos.playerName = playerName;
           raz();
           welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
         }
