@@ -116,6 +116,7 @@ export function coupsdemidi() {
   });
   appendOrPrepend("append", ".coupsdemidi-container", nextButton);
 
+  let countClick = 0;
   let countToIncarcerated = 20;
   const loader = document.querySelector(".loader");
   loader.innerText = countToIncarcerated;
