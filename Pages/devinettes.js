@@ -97,7 +97,7 @@ export function devinette() {
         label.classList.toggle("element-disabled");
         clearInterval(timerBeforIncarcerated);
         raz();
-        prison();
+        welcomeInTheNeighborhood("à la prison Saint-Michel", prison, 4);
       }, 2000);
     }
   }, 1000);
