@@ -1,8 +1,10 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { home } from "./home.js";
-import { playerInfos } from "../main.js";
+import { playerInfos, dateDifferenceInSeconds } from "../main.js";
 
 export function prison() {
+  const finalDate = new Date(Date.now());
+  const duration = dateDifferenceInSeconds(playerInfos.start, finalDate);
   const prisonContainer = createElementWithAttribute("div", { id: "prison-container" });
   appendOrPrepend("prepend", ".dynamic-content", prisonContainer);
 
@@ -14,8 +16,7 @@ export function prison() {
   const prisonParagraphe = createElementWithAttribute("p", { id: "prison-paragraphe" });
   appendOrPrepend("append", "#prison-container", prisonParagraphe);
 
-  prisonParagraphe.innerText +=
-    "La durée de votre session a été de " + playerInfos.totalTime + " secondes";
+  prisonParagraphe.innerText += "La durée de votre session a été de " + duration + " secondes";
 
   ////////////////
 
@@ -27,8 +28,8 @@ export function prison() {
   nextButton.addEventListener("click", () => {
     playerInfos.playerName = "";
     playerInfos.score = 0;
-    playerInfos.totalTime = 0;
     playerInfos.level = 0;
+    playerInfos.start = finalDate;
     raz();
     home();
   });

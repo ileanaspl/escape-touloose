@@ -1,10 +1,11 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { home } from "./home.js";
-import { playerInfos, neighborhoods } from "../main.js";
+import { playerInfos, dateDifferenceInSeconds } from "../main.js";
 
 export function endGame() {
   //////////////////
-
+  const finalDate = new Date(Date.now());
+  const duration = dateDifferenceInSeconds(playerInfos.start, finalDate);
   const devinetteContainer = createElementWithAttribute("div", { id: "endgame-container" });
   appendOrPrepend("prepend", ".dynamic-content", devinetteContainer);
 
@@ -15,7 +16,7 @@ export function endGame() {
   const question = createElementWithAttribute("p", { id: "endgame-paragraphe" });
   appendOrPrepend("append", "#endgame-container", question);
   question.innerText = "Votre score est de " + playerInfos.score + " points \n";
-  question.innerText += "La durée de votre session est de " + playerInfos.totalTime + " secondes";
+  question.innerText += "La durée de votre session est de " + duration + " secondes";
 
   ////////////////
 
@@ -28,8 +29,8 @@ export function endGame() {
   nextButton.addEventListener("click", () => {
     playerInfos.playerName = "";
     playerInfos.score = 0;
-    playerInfos.totalTime = 0;
     playerInfos.level = 0;
+    playerInfos.start = finalDate;
     raz();
     home();
   });
