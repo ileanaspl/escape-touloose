@@ -45,17 +45,23 @@ export function home() {
     dynamicContent.appendChild(nameInputSection);
 
     const footerHome = document.querySelector("footer");
-    footer.setAttribute("class", "footer-invisible");
+    footerHome.setAttribute("class", "footer-invisible");
 
-    /* const nextButton = createElementWithAttribute("button", { id: "next-button", class: "valid-button" });
+    const nextButton = createElementWithAttribute("button", { id: "next-button", class: "valid-button" });
+    nameInputSection.appendChild(nextButton);
     nextButton.innerText = "C'est parti!";
     nextButton.addEventListener("click", () => {
-        const playerName = document.getElementById("name-input").value.trim();
+        const playerName = document.querySelector(".valid-button").value.trim();
         if (playerName === "") {
             alert("Veuillez entrer votre nom.");
-            return    
+            return
+        } else {
+          header.innerText += playerName.value;
+          playerInfos.playerName = playerName.value;
+          raz();
+          welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
         }
-    }); */
+    });
 
       /*  const nameInputSection = document.querySelector(".name-input-section");
         if (nameInputSection) {
@@ -69,7 +75,7 @@ export function home() {
         /* const footerHome = document.querySelector("footer");
         footerHome.classList.remove("footer-invisible"); */
 
-  const nextButton = createElementWithAttribute("button", { id: "next-button" });
+  /* const nextButton = createElementWithAttribute("button", { id: "next-button" });
   nextButton.innerText = "Bouton suivant";
   nextButton.addEventListener("click", () => {
     header.innerText += playerName.value;
@@ -77,7 +83,8 @@ export function home() {
     raz();
     welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
   });
-  appendOrPrepend("append", ".dynamic-content", nextButton); 
+  appendOrPrepend("append", ".dynamic-content", nextButton); */
+  
 }
 
 
