@@ -132,7 +132,7 @@ export function coupsdemidi() {
     countClick > 0 && clearInterval(timerBeforIncarcerated);
     if (countToIncarcerated === 0) {
       textCoupsdemidi.innerHTML =
-        "Perdu l'escargot !!! Vous avez été trop lent(e), allez, au trou !";
+        "Perdu l'escargot !!! Vous avez été trop lent(e). Allez, au trou !";
       imageAndGridContainer.remove();
       form.remove();
       nextButton.remove();
