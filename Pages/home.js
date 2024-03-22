@@ -26,7 +26,7 @@ export function home() {
     // header.innerText += playerName.value;
     // playerInfos.playerName = playerName.value;
     raz();
-    welcomeInTheNeighborhood("dans le quartier de la Daurade", quizz, 0);
+    welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
   });
   appendOrPrepend("append", ".dynamic-content", nextButton);
 }
