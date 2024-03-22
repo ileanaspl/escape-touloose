@@ -1,6 +1,7 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { coupsdemidi } from "./coupsdemidi.js";
 import { playerInfos } from "../main.js";
+import { prison } from "./prison.js";
 
 export function quizz() {
 
@@ -22,25 +23,11 @@ export function quizz() {
         }
     ];
 
-
-    const title = createElementWithAttribute("h2", { id: "title" });
-    title.innerText = "Quizz page";
-    appendOrPrepend("append", ".dynamic-content", title);
-
-    const nextButton = createElementWithAttribute("button", { id: "next-button", class: "valid-button" });
-    nextButton.innerText = "Bouton suivant";
-    nextButton.addEventListener("click", () => {
-        raz();
-        coupsdemidi();
-    });
-
-    appendOrPrepend("append", ".dynamic-content", nextButton);
-
     const quizzContainer = createElementWithAttribute("div", { class: "quizz-container" });
 
     appendOrPrepend("append", ".dynamic-content", quizzContainer);
 
-    const interrogation = createElementWithAttribute("h3", { class: "interrogation" });
+    const interrogation = createElementWithAttribute("p", { class: "interrogation" });
 
     appendOrPrepend("append", ".quizz-container", interrogation);
 
@@ -49,13 +36,16 @@ export function quizz() {
     appendOrPrepend("append", ".quizz-container", choixRéponse);
 
 
-
     let currentQuestionIndex = 0;
     let score = 0;
 
 
+
     // Fonction pour afficher la question actuelle
-    function afficherQuestion() {
+    function displayQuestions() {
+
+
+
         interrogation.innerText = questions[currentQuestionIndex].question
         const question = questions[currentQuestionIndex];
         // console.log(question.question);
@@ -67,7 +57,14 @@ export function quizz() {
             optionElement.addEventListener('click', () => repondre(index));
             choixRéponse.appendChild(optionElement);
         });
+
+        timeout()
+
     }
+
+    const timerElement = document.querySelector(".loader");
+
+    let isAnswered = false
 
     // Fonction pour traiter la réponse de l'utilisateur
     function repondre(selectedIndex) {
@@ -77,9 +74,15 @@ export function quizz() {
 
 
         if (choice === question.reponse) {
-            score++;
+            score++
+            playerInfos.score++
+            isAnswered = true
             console.log("Bonne réponse !");
         } else {
+            isAnswered = true;
+            timerElement.classList.add("inactive")
+            raz()
+            prison()
             console.log(`Mauvaise réponse. La bonne réponse est : ${question.reponse}`);
         }
 
@@ -92,40 +95,55 @@ export function quizz() {
 
         // Passer à la prochaine question ou afficher le score final    
         if (currentQuestionIndex < questions.length) {
-            afficherQuestion();
-        } else {
-            console.log(`Votre score final est de ${score}/${questions.length}`);
+            displayQuestions();
+
+        }
+        else {
+            quizzContainer.innerHTML = ""
+            timerElement.classList.add("inactive")
         }
 
+        if (node) {
+            console.log(`Votre score final est de ${score}/${questions.length}`);
+        }
+    }
 
-        const departSeconde = 20
+
+    displayQuestions();
+
+    // Lancer le quiz
+    function timeout() {
+        let departSeconde = 20
 
 
-        const timerElement = document.getElementsByClassName(".loader")
+
         timerElement.innerText = departSeconde
 
         const interval = setInterval(() => {
-            // let secondes = parseInt(temps % 20, 10)
 
+            departSeconde--
+            timerElement.innerText = departSeconde
+            console.log(departSeconde)
 
-            // secondes = secondes < 10 ? "0" + secondes : secondes
-
-            // timerElement.innerText = `${secondes}`
-            // temps = temps <= 0 ? 0 : temps - 1
-
+            if (departSeconde === 0 || isAnswered === true) {
+                clearInterval(interval)
+            }
 
         }, 1000)
-
-        if (temps === 0) {
-            clearInterval(interval)
-        }
-        // console.log(interval);
     }
-    afficherQuestion();
-    // Lancer le quiz
 
+    const nextButton = createElementWithAttribute("button", { id: "next-button", class: "valid-button" });
+    nextButton.innerText = "Bouton suivant";
+    nextButton.addEventListener("click", () => {
+        raz();
+        coupsdemidi();
+    });
+
+    appendOrPrepend("append", ".dynamic-content", nextButton);
+
+
+    console.log(departSeconde);
 }
-
 
 
 //     const questions = [
@@ -150,7 +168,7 @@ export function quizz() {
 //     let score = 0;
 
 //     // Fonction pour afficher la question actuelle
-//     function afficherQuestion() {
+//     function displayQuestions() {
 //         const question = questions[currentQuestionIndex];
 //         const body = document.getElementsByTagName('dynamique-content')[0];
 
@@ -183,7 +201,7 @@ export function quizz() {
 
 //         // Passer à la prochaine question ou afficher le score final
 //         if (currentQuestionIndex < questions.length) {
-//             afficherQuestion();
+//             displayQuestions();
 //         } else {
 //             const scoreElement = document.createElement('p');
 //             scoreElement.textContent = `Votre score final est de ${score}/${questions.length}`;
@@ -192,5 +210,5 @@ export function quizz() {
 //     }
 
 //     // Lancer le quiz
-//     afficherQuestion();
+//     displayQuestions();
 
