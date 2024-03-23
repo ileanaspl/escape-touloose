@@ -34,7 +34,7 @@ export const neighborhoods = [
     url: "./Assets/welcome-saint-cyprien.jpg",
     descriptif:
       "Cet ancien faubourg du XIIeme siècle, souvent inondé dans le passé, est réputé populaire, cosmopolite (en raison des coiffeurs afros et des magasins alimentaires de produits exotiques), vivant et convivial.\n Ce quartier compte beaucoups de lieu emblématiques de Toulouse dont notamment, Le cours Dillon L'église du Sacré-Cœur, place de la Patte-d'Oie La maison à la Vigie, 2 avenue de Lombez/place de la Patte-d'Oie, probablement conçue par Auguste Virebent L'église Saint-Nicolas, L'hôpital de La Grave ou encore les Abattoirs, musée d'art moderne et contemporain.",
-    background: "./Assets/city-toulouse.jpg",
+    background: "./Assets/welcome-victory.jpg",
   },
   {
     neighborhood: "Prison Saint-Michel",
