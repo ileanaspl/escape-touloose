@@ -66,6 +66,8 @@ export function home() {
   infoTitle.innerText = "Bienvenue !";
   infoParagrahe.innerText = "";
 
+  const pseudo = document.querySelector("#pseudo");
+
   nextButton.addEventListener("click", () => {
     const playerName = nextButton.previousElementSibling.value.trim();
     if (playerName === "") {
@@ -75,7 +77,7 @@ export function home() {
       const title = document.querySelector("h1");
       headerHome.classList.remove("header-invisible");
       footerHome.classList.remove("footer-invisible");
-      title.innerText += ` ${playerName}`;
+      pseudo.innerText = ` ${playerName}`;
       raz();
       welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
     }
