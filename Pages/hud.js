@@ -1,6 +1,3 @@
-import { createElementWithAttribute, appendOrPrepend } from "../Services/util.js";
-import { apikey } from "../key.js";
-
 export function hud() {
   const infoBulle = document.querySelector("#info-bulle");
   const infoContainer = document.querySelector("#info-container");
