@@ -1,6 +1,8 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { home } from "./home.js";
 import { playerInfos, dateDifferenceInSeconds } from "../main.js";
+import { welcomeInTheNeighborhood } from "./intersection.js";
+import { quizz } from "./quizz.js";
 
 export function prison() {
   const finalDate = new Date(Date.now());
@@ -31,7 +33,7 @@ export function prison() {
     playerInfos.level = 0;
     playerInfos.start = finalDate;
     raz();
-    home();
+    welcomeInTheNeighborhood("dans le quartier de Saint-Etienne", quizz, 0);
   });
   appendOrPrepend("append", "#prison-container", nextButton);
 }

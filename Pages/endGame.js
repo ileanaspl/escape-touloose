@@ -1,6 +1,8 @@
 import { createElementWithAttribute, appendOrPrepend, raz } from "../Services/util.js";
 import { home } from "./home.js";
 import { playerInfos, dateDifferenceInSeconds } from "../main.js";
+import { welcomeInTheNeighborhood } from "./intersection.js";
+import { quizz } from "./quizz.js";
 
 export function endGame() {
   //////////////////

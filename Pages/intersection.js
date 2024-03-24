@@ -43,7 +43,7 @@ export function welcomeInTheNeighborhood(welcomeMessage, direction, place) {
   const infoParagrahe = document.querySelector("#info-paragraphe");
   const infoTitle = document.querySelector("#info-title");
   const infoIframe = document.querySelector("#info-iframe");
-  infoIframe.src = `https://www.google.com/maps/embed/v1/place?key=${apikey} &q=${neighborhoods[place].coordonnates}`;
+  infoIframe.src = `https://umap.openstreetmap.fr/fr/map/escape-touloose_1043667#${neighborhoods[place].coordonnates}`;
 
   infoTitle.innerText = neighborhoods[place].neighborhood;
   infoParagrahe.innerText = neighborhoods[place].descriptif;

@@ -24,7 +24,12 @@ export function devinette() {
   label.innerText = "Votre réponse";
   appendOrPrepend("append", "#form-devinette", label);
 
-  const input = createElementWithAttribute("input", { id: "input-devinette", type: "text" });
+  const input = createElementWithAttribute("input", {
+    id: "input-devinette",
+    type: "text",
+    placeholder: " votre réponse ",
+    autocomplete: "off",
+  });
   appendOrPrepend("append", "#form-devinette", input);
 
   const nextButton = createElementWithAttribute("button", {

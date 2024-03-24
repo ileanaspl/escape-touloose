@@ -3,6 +3,8 @@
 //Fonction de remise à zero de la balise main (utile à chaque changement de page)
 export function raz() {
   const main = document.querySelector(".dynamic-content");
+  const timer = document.querySelector(".loader");
+  timer.innerHTML = "";
   main.innerHTML = "";
 }
 

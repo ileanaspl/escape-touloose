@@ -18,5 +18,5 @@ export function hud() {
     }
   });
   const iframe = document.querySelector("#info-iframe");
-  iframe.src = `https://www.google.com/maps/embed/v1/place?key=${apikey} &q=43.5962037213863,1.4552344529356003`;
+  iframe.src = "https://umap.openstreetmap.fr/fr/map/escape-touloose_1043667#17/43.59608/1.45501";
 }
